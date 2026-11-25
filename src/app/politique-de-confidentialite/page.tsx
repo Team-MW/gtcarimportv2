@@ -24,7 +24,7 @@ export default function Confidentialite() {
         <div className="container" style={{ maxWidth: "800px", color: "#444", lineHeight: "1.8" }}>
           
           <p style={{ marginBottom: "2rem" }}>
-            Le site web <strong>https://gtcarsimport.com/</strong> est détenu par GT Cars Import, qui est un contrôleur de données de vos données personnelles.
+            Le site web <strong>https://gtcarsimport.com/</strong> est détenu par GTA Invest (marque GT Cars Import), société inscrite au Registre du Commerce suisse sous le numéro CHE-218.075.398, qui est un contrôleur de données de vos données personnelles.
           </p>
 
           <p style={{ marginBottom: "2rem" }}>
@@ -46,6 +46,18 @@ export default function Confidentialite() {
           </p>
           <p style={{ marginBottom: "1rem" }}>
             Vous pouvez visiter le site web sans nous dire qui vous êtes ni révéler d’informations, par lesquelles quelqu’un pourrait vous identifier comme un individu spécifique et identifiable. Toutefois, si vous souhaitez utiliser certaines fonctionnalités du site web, ou si vous souhaitez recevoir notre lettre d’information ou fournir d’autres détails en remplissant un formulaire, vous pouvez nous fournir des données personnelles, telles que votre e-mail, votre prénom, votre nom, votre ville de résidence, votre organisation, votre numéro de téléphone. Vous pouvez choisir de ne pas nous fournir vos données personnelles, mais il se peut alors que vous ne puissiez pas profiter de certaines fonctionnalités du site web. Par exemple, vous ne pourrez pas recevoir notre bulletin d’information ou nous contacter directement à partir du site web. Les utilisateurs qui ne savent pas quelles informations sont obligatoires sont invités à nous contacter via <a href="mailto:gtcarsimport44@gmail.com" style={{ color: "var(--red)", fontWeight: 600 }}>gtcarsimport44@gmail.com</a>.
+          </p>
+
+          <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.6rem" }}>Cookies :</h2>
+          <p style={{ marginBottom: "1rem" }}>
+            Le site utilise des cookies et technologies similaires strictement nécessaires à son fonctionnement, notamment
+            pour mémoriser votre choix concernant les cookies. Le formulaire de demande est fourni par le service tiers
+            JotForm, qui peut déposer ses propres cookies lorsque vous l’utilisez.
+          </p>
+          <p style={{ marginBottom: "1rem" }}>
+            Lors de votre première visite, un bandeau vous permet d’accepter ou de refuser les cookies non essentiels,
+            comme ceux de mesure d’audience. Aucun cookie de ce type n’est déposé sans votre accord. Vous pouvez modifier
+            votre choix à tout moment grâce au lien « Gérer les cookies » situé en bas de chaque page.
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.6rem" }}>Vos droits :</h2>

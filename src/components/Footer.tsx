@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import LogoLink from "./LogoLink";
+import { CookieSettingsButton } from "./CookieConsent";
 import styles from "./Footer.module.css";
 
 const navLinks = [
@@ -37,9 +39,9 @@ export default function Footer() {
         <div className={`container ${styles.footerGrid}`}>
           {/* Brand Column */}
           <div className={styles.footerBrand}>
-            <Link href="/" className={styles.footerLogo} style={{ display: 'inline-block' }}>
+            <LogoLink className={styles.footerLogo} style={{ display: 'inline-block' }}>
               <Image src="/logo.webp" alt="GT Cars Import" width={160} height={45} style={{ objectFit: 'contain' }} />
-            </Link>
+            </LogoLink>
             <p className={styles.brandTagline}>
               Spécialiste de la recherche et de l'importation de véhicules allemands depuis 2020.
             </p>
@@ -122,6 +124,7 @@ export default function Footer() {
           <p className={styles.copyright}>
             Copyright © {new Date().getFullYear()} GTCARSIMPORT — Tous droits réservés
           </p>
+          <CookieSettingsButton className={styles.cookieBtn} />
           <p className={styles.credits}>
             Ce site a été réalisé par <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer">micodidact</a>
           </p>

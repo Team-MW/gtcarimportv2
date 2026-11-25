@@ -25,7 +25,7 @@ export default function CGV() {
           
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>Préambule</h2>
           <p style={{ marginBottom: "1rem" }}>
-            Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre la société GT CARS IMPORT, ci-après dénommée « le Vendeur », et toute personne physique ou morale souhaitant procéder à un achat via le site internet du Vendeur ou par tout autre moyen, ci-après dénommée « le Client ».
+            Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre la société GTA Invest, inscrite au Registre du Commerce suisse sous le numéro CHE-218.075.398, dont le siège est situé Marktgasse 8, 4051 Bâle (Suisse), exploitant la marque GT CARS IMPORT, ci-après dénommée « le Vendeur », et toute personne physique ou morale souhaitant procéder à un achat via le site internet du Vendeur ou par tout autre moyen, ci-après dénommée « le Client ».
           </p>
           <div style={{ padding: "1.5rem", backgroundColor: "var(--off-white)", borderLeft: "4px solid var(--red)", borderRadius: "4px", marginBottom: "2rem" }}>
             <p style={{ margin: 0, fontWeight: 500, color: "#111" }}>
@@ -55,12 +55,12 @@ export default function CGV() {
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>5. Prix</h2>
           <p style={{ marginBottom: "2rem" }}>
-            Les prix des produits sont indiqués en euros toutes taxes comprises (TTC). Le Vendeur se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix figurant au catalogue le jour de la commande sera le seul applicable au Client.
+            Les prix des produits sont indiqués en francs suisses (CHF) toutes taxes comprises (TTC), TVA suisse incluse. Le Vendeur se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix figurant au catalogue le jour de la commande sera le seul applicable au Client.
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>6. Modalités de paiement</h2>
           <p style={{ marginBottom: "2rem" }}>
-            Le paiement est exigible immédiatement à la commande. Le Client peut régler sa commande par carte bancaire, virement bancaire ou chèque.
+            Le paiement est exigible immédiatement à la commande. Le Client règle sa commande par virement bancaire.
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>7. Livraison</h2>
@@ -75,7 +75,7 @@ export default function CGV() {
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>9. Garantie</h2>
           <p style={{ marginBottom: "2rem" }}>
-            Tous les produits fournis par le Vendeur bénéficient de la garantie légale prévue par les articles 1641 et suivants du Code civil. En cas de non-conformité d’un produit vendu, il pourra être retourné au Vendeur qui le reprendra, l’échangera ou le remboursera.
+            Tous les produits fournis par le Vendeur bénéficient de la garantie légale prévue par les articles 197 et suivants du Code des obligations suisse. En cas de non-conformité d’un produit vendu, il pourra être retourné au Vendeur qui le reprendra, l’échangera ou le remboursera.
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>10. Responsabilité</h2>
@@ -95,7 +95,7 @@ export default function CGV() {
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>13. Règlement des litiges</h2>
           <p style={{ marginBottom: "2rem" }}>
-            Les présentes conditions de vente en ligne sont soumises à la loi française. En cas de litige, compétence est attribuée aux tribunaux compétents de Paris, nonobstant pluralité de défendeurs ou appel en garantie.
+            Les présentes conditions de vente en ligne sont soumises au droit suisse. En cas de litige, compétence est attribuée aux tribunaux compétents de Bâle (Suisse), sous réserve des fors impératifs prévus par la loi, nonobstant pluralité de défendeurs ou appel en garantie.
           </p>
 
         </div>

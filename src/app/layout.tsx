@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata, SITE_URL } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -81,6 +82,8 @@ export default function RootLayout({
             })
           }}
         />
+
+        <CookieConsent />
 
         {/* Floating WhatsApp CTA */}
         <div className="floating-whatsapp-cta">

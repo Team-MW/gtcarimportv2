@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import LogoLink from "./LogoLink";
 import styles from "./Navbar.module.css";
 
 const links = [
@@ -32,7 +33,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`} role="navigation" aria-label="Navigation principale">
       <div className={`${styles.navInner} container`}>
         {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="GT Cars Import - Accueil">
+        <LogoLink className={styles.logo}>
           <Image 
             src="/logo.webp" 
             alt="GT Cars Import Logo" 
@@ -41,7 +42,7 @@ export default function Navbar() {
             priority 
             className={styles.logoImage} 
           />
-        </Link>
+        </LogoLink>
 
         {/* Desktop Nav */}
         <ul className={styles.navLinks}>
