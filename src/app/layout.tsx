@@ -52,7 +52,7 @@ export default function RootLayout({
               "url": "https://gtcarsimport.com",
               "telephone": "+33970702675",
               "email": "gtcarsimport44@gmail.com",
-              "sameAs": ["https://www.instagram.com/gtcarsimport"],
+              "sameAs": ["https://www.instagram.com/gt_cars_import/"],
               "areaServed": ["CH", "Europe"],
               "openingHoursSpecification": [
                 {
@@ -67,7 +67,7 @@ export default function RootLayout({
                 "contactType": "customer service",
                 "telephone": "+33970702675",
                 "email": "gtcarsimport44@gmail.com",
-                "url": "https://gtcarsimport.com/faire-une-demande",
+                "url": "https://gtcarsimport.com/faire-une-demande/",
                 "availableLanguage": ["fr"]
               },
               "address": {
@@ -85,7 +85,7 @@ export default function RootLayout({
         {/* Floating WhatsApp CTA */}
         <div className="floating-whatsapp-cta">
           <a 
-            href="https://wa.me/33970702675" 
+            href="https://wa.me/33756856934" 
             className="btn" 
             target="_blank" 
             rel="noopener noreferrer"

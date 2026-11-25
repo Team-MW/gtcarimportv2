@@ -40,7 +40,14 @@
   .heroContent { padding-top: 10rem; padding-bottom: 4.5rem; }
 }
 
+.heroHeading {
+  font-weight: inherit;
+  letter-spacing: normal;
+}
+
 .heroEyebrow {
+  font-family: var(--font-body);
+  line-height: 1.4;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -61,6 +68,7 @@
 }
 
 .heroTitle {
+  display: block;
   font-family: var(--font-heading);
   font-size: clamp(2.8rem, 7.5vw, 6.2rem);
   font-weight: 700;
@@ -71,7 +79,8 @@
   margin-bottom: 1.75rem;
 }
 
-.heroTitle span {
+.heroTitle em {
+  font-style: normal;
   color: var(--red);
 }
 
@@ -416,6 +425,57 @@
 .pricingCta {
   width: 100%;
   justify-content: center;
+}
+
+.pricingNotes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+@media (min-width: 900px) {
+  .pricingNotes { grid-template-columns: 1.15fr 1fr; gap: 1.5rem 4rem; }
+}
+
+.pricingNotesTitle {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 1.1rem;
+}
+
+.pricingNotesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pricingNotesList li,
+.pricingNotesText {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.pricingNotesList li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.pricingNotesList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 1px;
+  background: var(--ink-soft);
 }
 
 /* ── WHY GERMANY ──────────────────────────── */

@@ -25,8 +25,8 @@ const etapes = [
   { num: "02", title: "Recherche Active", desc: "Nous parcourons le marché allemand pour trouver les meilleures offres correspondant à votre profil." },
   { num: "03", title: "Expertise Physique", desc: "Un cabinet indépendant réalise une inspection complète et un essai routier sur place." },
   { num: "04", title: "Rapport & Validation", desc: "Vous recevez un rapport complet Carvertical + avis de nos experts avant de décider." },
-  { num: "05", title: "Achat & Paiement", desc: "Transaction sécurisée. Nous gérons l'achat, les documents et l'immatriculation." },
-  { num: "06", title: "Livraison", desc: "Votre voiture arrive par camion chez vous en moins de 10 jours. Clés en main." },
+  { num: "05", title: "Achat & Paiement", desc: "Transaction sécurisée. Nous gérons l'achat, la douane, la préparation au MFK et l'immatriculation suisse." },
+  { num: "06", title: "Livraison", desc: "Votre voiture est livrée à Bâle, ou à domicile et en hôtel partout en Suisse en option. Clés en main." },
 ];
 
 const galleryItems = [

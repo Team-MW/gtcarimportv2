@@ -45,7 +45,7 @@ export default function Footer() {
             </p>
             <div className={styles.socialRow}>
               <a
-                href="https://www.instagram.com/gtcarsimport"
+                href="https://www.instagram.com/gt_cars_import/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}

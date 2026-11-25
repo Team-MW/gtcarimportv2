@@ -38,7 +38,7 @@ const valeurs: { icon: IconName; title: string; desc: string }[] = [
 const avantages = [
   "Historique et kilométrages vérifiés",
   "Réactivité, disponibilité, efficacité",
-  "Livraison par camion en 10 jours dans toute l'Europe",
+  "Livraison par camion en Suisse et dans toute l'Europe",
   "Prestation clé en main",
   "Transactions bancaires sécurisées",
   "Essai routier effectué par les experts allemands avant l'achat",

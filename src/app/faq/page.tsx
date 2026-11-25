@@ -16,31 +16,47 @@ const faqs = [
   },
   {
     q: "Pourquoi acheter un véhicule en Allemagne ?",
-    a: "L'Allemagne est le plus grand marché automobile d'Europe. Les prix sont souvent 15 à 25% moins élevés que sur le marché local grâce à la forte concurrence. Les véhicules sont généralement très bien entretenus et les normes de contrôle très strictes.",
+    a: "L'Allemagne est le plus grand marché automobile d'Europe. Les prix y sont souvent 15 à 25% moins élevés que sur le marché local grâce à la forte concurrence. Les véhicules sont généralement très bien entretenus et les normes de contrôle très strictes.",
+  },
+  {
+    q: "Comment rechercher ma voiture ?",
+    a: "Vous pouvez consulter vous-même le marché allemand sur les grandes plateformes d'annonces comme mobile.de et autoscout24.de. Vous pouvez aussi nous demander de faire la recherche pour vous gratuitement : il suffit de remplir le formulaire de demande.",
   },
   {
     q: "Combien de temps prend une importation ?",
-    a: "Une fois le véhicule trouvé et validé, la livraison par camion prend 5 à 10 jours. La phase de recherche dépend de vos critères, mais nous trouvons généralement un véhicule correspondant en quelques jours.",
+    a: "Une fois le véhicule trouvé et validé, le transport de l'Allemagne vers la Suisse est organisé sous 72 h et le délai moyen de livraison est de 5 à 7 jours ouvrés. La phase de recherche dépend de vos critères.",
   },
   {
     q: "Qu'est-ce qui est inclus dans vos frais ?",
-    a: "Nos frais incluent systématiquement : la recherche personnalisée, la négociation, une expertise physique par un cabinet indépendant, un essai routier, le rapport Carvertical, la livraison par camion (pack frontière) et l'immatriculation complète.",
+    a: "Le Pack Clé en Main en Suisse (2 990 CHF TTC) comprend : la recherche personnalisée, la vérification complète par nos experts allemands avec essai routier, le rapport Carvertical, la négociation, le transport Allemagne → Suisse, les démarches douanières, la préparation au MFK, l'immatriculation suisse et la livraison à Bâle.",
+  },
+  {
+    q: "TVA et douane : qui s'occupe des démarches ?",
+    a: "Nous nous occupons de toutes les démarches douanières (documents d'import, certificat EUR.1). Le certificat EUR.1 est vérifié systématiquement pour éviter 4 % de droits de douane. Nos prestations sont facturées en CHF TTC, TVA suisse de 8,1 % incluse. Vous n'avez aucune démarche administrative à réaliser.",
+  },
+  {
+    q: "Y a-t-il une taxe CO₂ à payer ?",
+    a: "Aucune taxe CO₂ n'est à prévoir pour les véhicules de plus de 12 mois et de plus de 5 000 km. Pour un véhicule plus récent, un conseiller peut faire une simulation avec vous par téléphone.",
   },
   {
     q: "Est-ce que l'immatriculation est gérée par vos soins ?",
-    a: "Oui, nous nous occupons de toutes les démarches administratives : homologation, contrôle technique si nécessaire, et immatriculation de votre véhicule. Vous n'avez rien à faire.",
+    a: "Oui. Nous préparons le véhicule pour le contrôle MFK et nous nous occupons de l'immatriculation suisse complète : plaques, assurance et documents. Vous n'avez rien à faire.",
   },
   {
-    q: "Comment se passe le paiement ?",
-    a: "Toutes les transactions sont sécurisées et gérées par nos experts allemands. Nous vous informons de chaque étape et vous avez une totale transparence sur les coûts avant tout engagement.",
+    q: "Comment je règle mon véhicule et la prestation ?",
+    a: "Nous opérons en tant que courtier automobile, avec transparence et sécurité. Vous effectuez le paiement du véhicule directement à nos experts allemands par virement bancaire. Nous agissons en tant qu'intermédiaire dans le contrat d'achat, qui est établi directement à votre nom. Le véhicule n'est ni récupéré ni livré tant que le paiement intégral n'a pas été effectué auprès du vendeur allemand. Vous n'avez rien à payer avant d'avoir validé l'importation.",
   },
   {
     q: "Puis-je choisir n'importe quel véhicule ?",
-    a: "Oui ! Nous importons toutes marques et toutes gammes : sportives, SUV, berlines, citadines, utilitaires, électriques et hybrides. Si vous avez un modèle en tête, nous le cherchons pour vous.",
+    a: "Oui. Nous importons toutes marques et toutes gammes, neuf ou occasion : sportives, SUV, berlines, citadines, utilitaires, électriques et hybrides. Si vous avez un modèle en tête, nous le cherchons pour vous.",
   },
   {
-    q: "Y a-t-il une garantie sur les véhicules importés ?",
-    a: "Nous sélectionnons uniquement des véhicules dont l'état a été validé par notre cabinet d'expertise indépendant. Le rapport Carvertical vous garantit la transparence de l'historique du véhicule.",
+    q: "Quelles garanties me proposent les garages allemands ?",
+    a: "Si vous achetez votre véhicule dans une concession officielle, il est vendu avec une garantie européenne. Pour la faire fonctionner, vous pouvez vous rendre dans la concession de la marque la plus proche de chez vous. Dans tous les cas, nous sélectionnons uniquement des véhicules dont l'état a été validé par notre cabinet d'expertise indépendant, avec un rapport Carvertical sur l'historique.",
+  },
+  {
+    q: "Proposez-vous un financement ?",
+    a: "Oui. Nous proposons des solutions de leasing ou de crédit adaptées aux résidents suisses. Vous pouvez vous préinscrire pour être recontacté dès la validation de votre profil.",
   },
   {
     q: "Comment fonctionne votre programme de parrainage ?",
@@ -48,14 +64,28 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function FAQ() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Header */}
       <section className="page-header">
         <div className="container">
           <p className="section-eyebrow">Vos questions</p>
-          <h1 className="section-title">Questions <span>Fréquentes</span></h1>
+          <h1 className="section-title">FAQ : questions <span>fréquentes</span></h1>
           <div className="red-line" />
           <p className="section-subtitle">
             Tout ce que vous devez savoir sur l'importation de véhicules depuis l'Allemagne.

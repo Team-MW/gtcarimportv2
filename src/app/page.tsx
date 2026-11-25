@@ -7,10 +7,36 @@ import styles from "./page.module.css";
 const avantages: { icon: IconName; label: string }[] = [
   { icon: "search", label: "Historique et kilométrages vérifiés" },
   { icon: "clock", label: "Réactivité, disponibilité, efficacité" },
-  { icon: "truck", label: "Livraison par camion en 10 jours dans toute l'Europe" },
+  { icon: "truck", label: "Livraison par camion en Suisse et dans toute l'Europe" },
   { icon: "key", label: "Prestation clé en main" },
   { icon: "lock", label: "Transactions bancaires sécurisées" },
   { icon: "wheel", label: "Essai routier par nos experts allemands avant l'achat" },
+];
+
+const packFeatures = [
+  "Recherche personnalisée selon vos critères (budget, motorisation, options)",
+  "Vérification complète par nos experts allemands + rapport Carvertical",
+  "Négociation directe avec les concessions partenaires en Allemagne",
+  "Organisation du transport Allemagne → Suisse sous 72 h",
+  "Démarches douanières complètes (documents d'import, EUR.1)",
+  "Préparation au MFK : véhicules sélectionnés prêts pour le contrôle",
+  "Livraison à Bâle comprise dans le pack",
+  "Immatriculation suisse complète (plaques, assurance, documents)",
+  "Aucune démarche administrative à faire",
+];
+
+const optionFeatures = [
+  "À domicile ou en hôtel 4 et 5 étoiles (Genève, Lausanne, Zurich, Lugano, Bâle…)",
+  "Livraison planifiée sous 24 à 48 h après validation MFK",
+  "Véhicule préparé, nettoyé et prêt à rouler",
+  "Livraison possible dans toute l'Europe sur devis",
+];
+
+const fiscalite = [
+  "Prestations facturées en CHF TTC (TVA suisse 8,1 %)",
+  "Aucune taxe CO₂ à prévoir pour les véhicules de plus de 12 mois et de plus de 5 000 km",
+  "Véhicule livré clé en main, prêt à immatriculer",
+  "Certificat EUR.1 vérifié systématiquement pour éviter 4 % de droits de douane",
 ];
 
 const dernieres = [
@@ -81,9 +107,11 @@ export default function Home() {
           <div className={styles.heroBgOverlay} />
         </div>
         <div className={`container ${styles.heroContent}`}>
-          <p className={styles.heroEyebrow}>Import de Véhicules Allemands</p>
-          <h1 className={styles.heroTitle}>
-            Le courtier<br />à <span>votre service</span>
+          <h1 className={styles.heroHeading}>
+            <span className={styles.heroEyebrow}>Import de véhicule allemand</span>
+            <span className={styles.heroTitle}>
+              Le courtier<br />à <em>votre service</em>
+            </span>
           </h1>
           <p className={styles.heroSubtitle}>
             Spécialiste de la recherche et importation de véhicules toutes gammes
@@ -103,7 +131,7 @@ export default function Home() {
             {[
               { end: 2020, suffix: "", l: "Année de création" },
               { end: 137, suffix: "+", l: "Avis Google" },
-              { end: 10, suffix: "j", l: "Délai de livraison" },
+              { end: 7, suffix: "j", l: "Délai moyen de livraison" },
               { end: 25, suffix: "%", l: "D'économies" },
             ].map((s) => (
               <div key={s.l} className={styles.heroStat}>
@@ -134,7 +162,7 @@ export default function Home() {
               </p>
               <p className={styles.bodyText} style={{ marginBottom: "2.25rem" }}>
                 Notre service premium vous garantit une expérience sans contrainte : <strong>recherche personnalisée</strong>,
-                expertise physique et <strong>livraison clé en main dans toute l'Europe</strong>.
+                expertise physique et <strong>livraison clé en main en Suisse</strong>.
               </p>
               <Link href="/a-propos" className="btn btn-outline-red">
                 En savoir plus
@@ -168,7 +196,7 @@ export default function Home() {
             {[
               { num: "01", title: "Recherche", desc: "Nous analysons le marché allemand pour trouver le véhicule exact correspondant à vos critères." },
               { num: "02", title: "Expertise", desc: "Un cabinet indépendant réalise une expertise physique et un essai routier avant tout achat." },
-              { num: "03", title: "Livraison", desc: "Votre véhicule est livré par camion à votre domicile dans toute l'Europe en 10 jours." },
+              { num: "03", title: "Formalités et livraison", desc: "Douane, préparation au MFK et immatriculation suisse sont gérées par nos soins. Livraison à Bâle, ou à domicile en option." },
             ].map((step) => (
               <div key={step.num} className={styles.processCard}>
                 <span className={styles.processNum}>{step.num}</span>
@@ -220,24 +248,17 @@ export default function Home() {
             {/* Pack Principal */}
             <div className={styles.pricingCard}>
               <div className={styles.pricingBadge}>Le plus demandé</div>
-              <h3 className={styles.pricingName}>Pack Clé en Main Frontière</h3>
+              <h3 className={styles.pricingName}>Pack Clé en Main en Suisse</h3>
               <p className={styles.pricingDesc}>
-                Livraison incluse par camion dans notre dépôt à la frontière.<br />
-                Délai 5/7 jours
+                Livraison incluse à Bâle. Accompagnement complet pour l'importation, les démarches
+                douanières et l'immatriculation en Suisse. Délai moyen de livraison : 5 à 7 jours ouvrés.
               </p>
               <div className={styles.pricingPrice}>
-                <span className={styles.pricingAmount}>1 490€</span>
-                <span className={styles.pricingUnit}>tout compris</span>
+                <span className={styles.pricingAmount}>2 990</span>
+                <span className={styles.pricingUnit}>CHF TTC</span>
               </div>
               <ul className={styles.pricingFeatures}>
-                {[
-                  "Recherche personnalisée",
-                  "Négociation incluse",
-                  "Expertise physique + essai routier",
-                  "Rapport complet + Carvertical",
-                  "Livraison par camion à Cologne (Köln)",
-                  "Immatriculation complète incluse",
-                ].map((f) => (
+                {packFeatures.map((f) => (
                   <li key={f} className={styles.pricingFeature}>
                     <Icon name="check" size={17} />
                     {f}
@@ -252,21 +273,16 @@ export default function Home() {
             {/* Option livraison */}
             <div className={`${styles.pricingCard} ${styles.pricingOption}`}>
               <div className={styles.pricingBadge}>Option</div>
-              <h3 className={styles.pricingName}>Livraison à Domicile</h3>
+              <h3 className={styles.pricingName}>Livraison à domicile ou en hôtel</h3>
               <p className={styles.pricingDesc}>
-                Livraison sécurisée par camion directement chez vous, partout en Europe. Délai 10 jours.
+                Pour une remise sur mesure et confidentielle, partout en Suisse.
               </p>
               <div className={styles.pricingPrice}>
-                <span className={styles.pricingAmount}>+1€</span>
-                <span className={styles.pricingUnit}>/ km</span>
+                <span className={styles.pricingAmount}>+ 890</span>
+                <span className={styles.pricingUnit}>CHF</span>
               </div>
               <ul className={styles.pricingFeatures}>
-                {[
-                  "Livraison sécurisée par camion",
-                  "À votre domicile ou bureau",
-                  "Toute l'Europe en moins de 10 jours",
-                  "Devis effectué avec les transporteurs",
-                ].map((f) => (
+                {optionFeatures.map((f) => (
                   <li key={f} className={`${styles.pricingFeature} ${styles.pricingFeatureLight}`}>
                     <Icon name="check" size={17} />
                     {f}
@@ -276,6 +292,24 @@ export default function Home() {
               <Link href="/faire-une-demande" className={`btn btn-outline-red ${styles.pricingCta}`}>
                 Demander un devis
               </Link>
+            </div>
+          </div>
+
+          <div className={styles.pricingNotes}>
+            <div>
+              <h3 className={styles.pricingNotesTitle}>Détails et fiscalité</h3>
+              <ul className={styles.pricingNotesList}>
+                {fiscalite.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className={styles.pricingNotesTitle}>Financement</h3>
+              <p className={styles.pricingNotesText}>
+                Nous proposons des solutions de leasing ou de crédit adaptées aux résidents suisses,
+                avec possibilité de préinscription pour être recontacté dès validation de votre profil.
+              </p>
             </div>
           </div>
         </div>

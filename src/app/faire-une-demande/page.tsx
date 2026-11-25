@@ -81,7 +81,7 @@ export default function Contact() {
                   "Recherche personnalisée",
                   "Expertise indépendante garantie",
                   "Clé en main, aucune démarche",
-                  "Livraison Europe en 10 jours",
+                  "Livraison en Suisse et en Europe",
                 ].map((label) => (
                   <div key={label} className={styles.promesseItem}>
                     <Icon name="check" size={17} className={styles.promesseIcon} />
