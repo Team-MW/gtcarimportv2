@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const team = [
   { name: "Patrick Rownicki", role: "Expert Allemand", initials: "PR" },
-  { name: "Jürgen Schneller", role: "Service Carte Grise", initials: "JS" },
+  { name: "Jürgen Schneller", role: "Service Immatriculation", initials: "JS" },
   { name: "Olivier Kammerer", role: "Commercial", initials: "OK" },
   { name: "Eduar. Just", role: "Expert Allemand", initials: "EJ" },
 ];
@@ -35,7 +35,7 @@ const valeurs = [
 const avantages = [
   "Historique et kilométrages vérifiés",
   "Réactivité — Disponibilité — Efficacité",
-  "Livraison par camion en 10 jours dans toute la France",
+  "Livraison par camion en 10 jours dans toute l'Europe",
   "Prestation clé en main",
   "Transactions bancaires sécurisées",
   "Essai routier effectué par les experts allemands avant l'achat",

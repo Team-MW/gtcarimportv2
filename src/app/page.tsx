@@ -187,7 +187,7 @@ export default function Home() {
               <h3 className={styles.pricingName}>Pack Clé en Main Frontière</h3>
               <p className={styles.pricingDesc}>
                 Livraison incluse par camion dans notre dépôt à la frontière.<br />
-                Accès en TGV à 2h30 depuis Paris — Délai 5/7 jours
+                Délai 5/7 jours
               </p>
               <div className={styles.pricingPrice}>
                 <span className={styles.pricingAmount}>1 490€</span>
@@ -266,7 +266,7 @@ export default function Home() {
                 {[
                   "Plus de choix et des modèles récents",
                   "Des véhicules mieux entretenus",
-                  "Jusqu'à 25% d'économies vs concessionnaire français",
+                  "Jusqu'à 25% d'économies vs concessionnaire local",
                   "Expertise locale sur place avant achat",
                 ].map((p) => (
                   <div key={p} className={styles.keyPoint}>

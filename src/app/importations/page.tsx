@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const categories = [
   { emoji: "🏎️", name: "Sportives", ex: "BMW M, AMG, RS, GTI, Type R…", desc: "Des performances exceptionnelles importées directement depuis le marché allemand." },
-  { emoji: "💎", name: "Luxe & Prestige", ex: "Porsche, Audi A8, Mercedes Classe S…", desc: "Le summum du raffinement, avec des options souvent indisponibles en France." },
+  { emoji: "💎", name: "Luxe & Prestige", ex: "Porsche, Audi A8, Mercedes Classe S…", desc: "Le summum du raffinement, avec des options souvent indisponibles ailleurs." },
   { emoji: "🚙", name: "SUV & 4x4", ex: "BMW X5, GLE, Cayenne, Q7…", desc: "Polyvalence et puissance pour tous vos trajets, à prix optimisé." },
-  { emoji: "🚗", name: "Citadines & Compactes", ex: "Golf, A3, Classe A, 1 Series…", desc: "Les modèles les plus demandés, souvent 20–25% moins chers qu'en France." },
+  { emoji: "🚗", name: "Citadines & Compactes", ex: "Golf, A3, Classe A, 1 Series…", desc: "Les modèles les plus demandés, souvent 20–25% moins chers que sur le marché local." },
   { emoji: "🚐", name: "Utilitaires", ex: "Sprinter, Crafter, Transit…", desc: "Des utilitaires récents et bien entretenus pour votre activité professionnelle." },
   { emoji: "⚡", name: "Électriques & Hybrides", ex: "iX, EQC, e-tron, Taycan…", desc: "La mobilité de demain à des tarifs compétitifs grâce au marché allemand." },
 ];
@@ -21,7 +21,7 @@ const etapes = [
   { num: "02", title: "Recherche Active", desc: "Nous parcourons le marché allemand pour trouver les meilleures offres correspondant à votre profil." },
   { num: "03", title: "Expertise Physique", desc: "Un cabinet indépendant réalise une inspection complète et un essai routier sur place." },
   { num: "04", title: "Rapport & Validation", desc: "Vous recevez un rapport complet Carvertical + avis de nos experts avant de décider." },
-  { num: "05", title: "Achat & Paiement", desc: "Transaction sécurisée. Nous gérons l'achat, les documents et l'immatriculation française." },
+  { num: "05", title: "Achat & Paiement", desc: "Transaction sécurisée. Nous gérons l'achat, les documents et l'immatriculation." },
   { num: "06", title: "Livraison", desc: "Votre voiture arrive par camion chez vous en moins de 10 jours. Clés en main !" },
 ];
 
@@ -33,12 +33,12 @@ const galleryItems = [
   },
   {
     name: "BMW M3 Competition",
-    img: "/cars/Bmw-M3-MALUS-1024x768.jpg",
+    img: "/cars/Bmw-M3-1024x768.jpg",
     desc: "Recherche sur mesure",
   },
   {
     name: "Dodge Challenger Scat Pack",
-    img: "/cars/Dodge-Challenger-Scat-Pack-MALUS-ALPINE-1024x768.jpg",
+    img: "/cars/Dodge-Challenger-Scat-Pack-1024x768.jpg",
     desc: "Import & Homologation",
   },
   {

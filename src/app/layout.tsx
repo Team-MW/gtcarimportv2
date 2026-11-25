@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
     url: "https://gtcarsimport.com",
     siteName: "GT Cars Import",
-    locale: "fr_FR",
+    locale: "fr_CH",
     type: "website",
   },
   twitter: {
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={geistSans.variable}>
+    <html lang="fr-CH" className={geistSans.variable}>
       <body>
         <Navbar />
         <div style={{ paddingTop: "0" }}>
@@ -56,10 +56,39 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "AutoDealer",
+              "@id": "https://gtcarsimport.com/#organization",
               "name": "GT Cars Import",
+              "alternateName": ["GTCARSIMPORT", "GT Cars Import Bâle"],
+              "legalName": "GTA Invest",
+              "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "CHE (Registre du Commerce suisse)",
+                "value": "CHE-218.075.398"
+              },
+              "foundingDate": "2020",
               "image": "https://gtcarsimport.com/logo.webp",
+              "logo": "https://gtcarsimport.com/logo.webp",
               "url": "https://gtcarsimport.com",
               "telephone": "+33970702675",
+              "email": "gtcarsimport44@gmail.com",
+              "sameAs": ["https://www.instagram.com/gtcarsimport"],
+              "areaServed": ["CH", "Europe"],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "10:00",
+                  "closes": "18:00"
+                }
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+33970702675",
+                "email": "gtcarsimport44@gmail.com",
+                "url": "https://gtcarsimport.com/contact",
+                "availableLanguage": ["fr"]
+              },
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Marktgasse 8",

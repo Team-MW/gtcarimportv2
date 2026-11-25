@@ -8,8 +8,12 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    q: "GT Cars Import est-elle toujours en activité ?",
+    a: "Oui. GT Cars Import est en activité depuis 2020 et traite de nouvelles demandes d'importation chaque semaine. Vous pouvez nous joindre par téléphone au 09 70 70 26 75, par WhatsApp, par e-mail ou via le formulaire de demande : un expert vous recontacte sous 24h.",
+  },
+  {
     q: "Pourquoi acheter un véhicule en Allemagne ?",
-    a: "L'Allemagne est le plus grand marché automobile d'Europe. Les prix sont souvent 15 à 25% moins élevés qu'en France grâce à la forte concurrence. Les véhicules sont généralement très bien entretenus et les normes de contrôle très strictes.",
+    a: "L'Allemagne est le plus grand marché automobile d'Europe. Les prix sont souvent 15 à 25% moins élevés que sur le marché local grâce à la forte concurrence. Les véhicules sont généralement très bien entretenus et les normes de contrôle très strictes.",
   },
   {
     q: "Combien de temps prend une importation ?",
@@ -21,7 +25,7 @@ const faqs = [
   },
   {
     q: "Est-ce que l'immatriculation est gérée par vos soins ?",
-    a: "Oui, nous nous occupons de toutes les démarches administratives : homologation, contrôle technique si nécessaire, et immatriculation française. Vous n'avez rien à faire.",
+    a: "Oui, nous nous occupons de toutes les démarches administratives : homologation, contrôle technique si nécessaire, et immatriculation de votre véhicule. Vous n'avez rien à faire.",
   },
   {
     q: "Comment se passe le paiement ?",
