@@ -1,8 +1,6 @@
 /* CTA Banner */
 .ctaBanner {
-  background: linear-gradient(135deg, #1a0000 0%, #2d0000 50%, #1a0000 100%);
-  border-top: 1px solid rgba(217,0,0,0.3);
-  border-bottom: 1px solid rgba(217,0,0,0.2);
+  background: var(--red);
   padding: 3.5rem 0;
 }
 
@@ -14,27 +12,41 @@
 }
 
 .ctaTitle {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  font-stretch: 108%;
   color: #ffffff;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .ctaSub {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.85);
   font-size: 0.95rem;
+}
+
+.ctaBtn {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+  flex-shrink: 0;
+}
+
+.ctaBtn:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
 }
 
 /* Main footer */
 .footer {
-  background-color: #050505;
+  background-color: var(--black);
   color: rgba(255,255,255,0.7);
 }
 
 .footerMain {
   padding: 5rem 0 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-dark);
 }
 
 .footerGrid {
@@ -48,7 +60,7 @@
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 900;
   color: #fff;
@@ -86,44 +98,30 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid var(--border-dark);
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 .socialLink:hover {
   color: #fff;
-  border-color: #d90000;
-  background: rgba(217,0,0,0.1);
+  border-color: rgba(255,255,255,0.4);
 }
 
 /* Column */
 .footerCol {}
 
 .footerColTitle {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: rgba(255,255,255,0.45);
   margin-bottom: 1.5rem;
-  position: relative;
-  padding-bottom: 0.8rem;
-}
-
-.footerColTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background: #d90000;
-  border-radius: 1px;
 }
 
 .footerList {
@@ -137,23 +135,14 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.55);
-  transition: all 0.2s ease;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s ease;
 }
 
 .footerLink:hover {
   color: #fff;
-  padding-left: 4px;
-}
-
-.footerLinkArrow {
-  color: #d90000;
-  font-size: 0.8rem;
-  transition: transform 0.2s ease;
-}
-
-.footerLink:hover .footerLinkArrow {
-  transform: translateX(3px);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* Contact list */
@@ -168,8 +157,14 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.8);
   transition: color 0.2s ease;
+}
+
+.footerHours {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
 }
 
 .footerContactItem:hover {
@@ -195,12 +190,12 @@
 
 .copyright {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.45);
 }
 
 .credits {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.45);
 }
 
 .credits span {

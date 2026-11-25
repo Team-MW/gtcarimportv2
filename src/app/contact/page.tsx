@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import styles from "./contact.module.css";
 import JotForm from "@/components/JotForm";
+import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Faire une demande | GT Cars Import",
@@ -11,12 +12,7 @@ export default function Contact() {
   return (
     <main>
       {/* Header */}
-      <section style={{
-        background: "linear-gradient(135deg, #050505 0%, #1a0000 100%)",
-        paddingTop: "10rem",
-        paddingBottom: "5rem",
-        borderBottom: "1px solid rgba(217,0,0,0.2)",
-      }}>
+      <section className="page-header">
         <div className="container">
           <p className="section-eyebrow">Démarrez votre projet</p>
           <h1 className="section-title">Faire une <span>demande</span></h1>
@@ -54,6 +50,16 @@ export default function Contact() {
                 </div>
                 <div className={styles.infoItem}>
                   <div className={styles.infoIcon}>
+                    <Icon name="clock" size={20} />
+                  </div>
+                  <div>
+                    <p className={styles.infoLabel}>Horaires</p>
+                    <p className={styles.infoValue}>Lundi au vendredi, 10h – 18h</p>
+                    <p className={styles.infoNote}>Samedi sur rendez-vous</p>
+                  </div>
+                </div>
+                <div className={styles.infoItem}>
+                  <div className={styles.infoIcon}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                     </svg>
@@ -69,15 +75,15 @@ export default function Contact() {
               <div className={styles.promessesBlock}>
                 <h3 className={styles.infoTitle}>Nos engagements</h3>
                 {[
-                  { icon: "⚡", label: "Réponse sous 24h" },
-                  { icon: "🔍", label: "Recherche personnalisée" },
-                  { icon: "🛡️", label: "Expertise indépendante garantie" },
-                  { icon: "🔑", label: "Clé en main, aucune démarche" },
-                  { icon: "🚛", label: "Livraison Europe en 10 jours" },
-                ].map((p) => (
-                  <div key={p.label} className={styles.promesseItem}>
-                    <span className={styles.promesseIcon}>{p.icon}</span>
-                    <span className={styles.promesseLabel}>{p.label}</span>
+                  "Réponse sous 24h",
+                  "Recherche personnalisée",
+                  "Expertise indépendante garantie",
+                  "Clé en main, aucune démarche",
+                  "Livraison Europe en 10 jours",
+                ].map((label) => (
+                  <div key={label} className={styles.promesseItem}>
+                    <Icon name="check" size={17} className={styles.promesseIcon} />
+                    <span className={styles.promesseLabel}>{label}</span>
                   </div>
                 ))}
               </div>

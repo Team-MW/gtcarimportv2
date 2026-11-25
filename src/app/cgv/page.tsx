@@ -9,11 +9,11 @@ export default function CGV() {
   return (
     <main>
       {/* ── PAGE HEADER ───────────────────────────── */}
-      <section className="section-dark section-pad" style={{ paddingBottom: "3rem", borderBottom: "1px solid var(--border-dark)" }}>
-        <div className="container" style={{ textAlign: "center" }}>
+      <section className="page-header">
+        <div className="container">
           <p className="section-eyebrow">Informations juridiques</p>
           <h1 className="section-title">Conditions Générales de <span>Vente</span></h1>
-          <div className="red-line center" />
+          <div className="red-line" />
         </div>
       </section>
 

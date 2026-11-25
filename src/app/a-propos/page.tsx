@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Icon, { type IconName } from "@/components/Icon";
 import styles from "./a-propos.module.css";
 
 export const metadata: Metadata = {
@@ -14,19 +15,19 @@ const team = [
   { name: "Eduar. Just", role: "Expert Allemand", initials: "EJ" },
 ];
 
-const valeurs = [
+const valeurs: { icon: IconName; title: string; desc: string }[] = [
   {
-    icon: "🏆",
+    icon: "award",
     title: "Expertise",
     desc: "Nos experts possèdent une grande expérience que nous mettons à votre disposition.",
   },
   {
-    icon: "✅",
+    icon: "shield",
     title: "Qualité",
     desc: "Nous vous proposons des véhicules de qualité à prix réduits.",
   },
   {
-    icon: "🔒",
+    icon: "lock",
     title: "Sécurité Bancaire",
     desc: "Toutes les transactions bancaires sont sécurisées par nos experts Allemands.",
   },
@@ -34,7 +35,7 @@ const valeurs = [
 
 const avantages = [
   "Historique et kilométrages vérifiés",
-  "Réactivité — Disponibilité — Efficacité",
+  "Réactivité, disponibilité, efficacité",
   "Livraison par camion en 10 jours dans toute l'Europe",
   "Prestation clé en main",
   "Transactions bancaires sécurisées",
@@ -45,7 +46,7 @@ export default function APropos() {
   return (
     <main>
       {/* ── PAGE HEADER ───────────────────────────── */}
-      <section className={styles.pageHeader}>
+      <section className="page-header">
         <div className="container">
           <p className="section-eyebrow">Qui sommes-nous</p>
           <h1 className="section-title">À propos de <span>GT Cars Import</span></h1>
@@ -65,12 +66,12 @@ export default function APropos() {
               <p className="section-eyebrow">Notre histoire</p>
               <h2 className="section-title" style={{ color: "#111" }}>Une équipe de <span>passionnés</span></h2>
               <div className="red-line" />
-              <p style={{ color: "#444", lineHeight: "1.9", marginBottom: "1.5rem" }}>
+              <p className={styles.bodyText}>
                 Notre équipe de passionnés est à votre disposition pour vous aider à trouver le véhicule
                 de vos rêves. Nous vous offrons un service clé en main et vous n'avez aucune démarche
                 à effectuer dans votre futur projet automobile.
               </p>
-              <p style={{ color: "#444", lineHeight: "1.9", marginBottom: "2rem" }}>
+              <p className={styles.bodyText} style={{ marginBottom: "2rem" }}>
                 Nous réalisons toutes les étapes de votre projet d'importation, de la <strong>recherche du
                 véhicule</strong> à la <strong>livraison à votre domicile</strong>, en passant par l'expertise
                 physique, la négociation et l'immatriculation.
@@ -78,9 +79,7 @@ export default function APropos() {
               <div className={styles.avantagesList}>
                 {avantages.map((a) => (
                   <div key={a} className={styles.avantageItem}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d90000" strokeWidth="2.5">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
+                    <Icon name="check" size={17} />
                     {a}
                   </div>
                 ))}
@@ -90,11 +89,11 @@ export default function APropos() {
             {/* Valeurs */}
             <div className={styles.valeursList}>
               {valeurs.map((v) => (
-                <div key={v.title} className={`card-light ${styles.valeurCard}`}>
-                  <span style={{ fontSize: "2rem", lineHeight: 1, flexShrink: 0 }}>{v.icon}</span>
+                <div key={v.title} className={styles.valeurCard}>
+                  <span className="icon-tile"><Icon name={v.icon} /></span>
                   <div>
-                    <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, color: "#111", marginBottom: "0.4rem" }}>{v.title}</h3>
-                    <p style={{ color: "#666", fontSize: "0.9rem", lineHeight: "1.7" }}>{v.desc}</p>
+                    <h3 className={styles.valeurTitle}>{v.title}</h3>
+                    <p className={styles.valeurDesc}>{v.desc}</p>
                   </div>
                 </div>
               ))}
@@ -114,24 +113,12 @@ export default function APropos() {
               Des professionnels passionnés d'automobile à votre service.
             </p>
           </div>
-          <div className="grid-4">
+          <div className={styles.team}>
             {team.map((member) => (
-              <div key={member.name} className="card-dark" style={{ textAlign: "center" }}>
-                <div style={{
-                  width: "70px", height: "70px", borderRadius: "50%",
-                  background: "linear-gradient(135deg, #d90000, #7d0000)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  margin: "0 auto 1.2rem",
-                  fontFamily: "'Outfit', sans-serif", fontWeight: 800, color: "#fff", fontSize: "1.2rem",
-                }}>
-                  {member.initials}
-                </div>
-                <h3 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, color: "#fff", marginBottom: "0.4rem", fontSize: "1rem" }}>
-                  {member.name}
-                </h3>
-                <p style={{ color: "#d90000", fontSize: "0.82rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px" }}>
-                  {member.role}
-                </p>
+              <div key={member.name} className={styles.member}>
+                <div className={styles.memberInitials}>{member.initials}</div>
+                <h3 className={styles.memberName}>{member.name}</h3>
+                <p className={styles.memberRole}>{member.role}</p>
               </div>
             ))}
           </div>
@@ -143,7 +130,7 @@ export default function APropos() {
         <div className="container" style={{ textAlign: "center" }}>
           <p className="section-eyebrow">Prêt à vous lancer ?</p>
           <h2 className="section-title" style={{ color: "#111" }}>
-            N'attendez plus et faites une<br /><span>demande personnalisée !</span>
+            N'attendez plus et faites une<br /><span>demande personnalisée</span>
           </h2>
           <div className="red-line center" />
           <Link href="/contact" className="btn btn-primary btn-lg" style={{ marginTop: "1rem" }}>

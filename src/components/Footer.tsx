@@ -23,10 +23,10 @@ export default function Footer() {
       <div className={styles.ctaBanner}>
         <div className={`container ${styles.ctaInner}`}>
           <div className={styles.ctaText}>
-            <h2 className={styles.ctaTitle}>N'attendez plus et faites une demande personnalisée !</h2>
+            <h2 className={styles.ctaTitle}>Parlons de votre prochain véhicule</h2>
             <p className={styles.ctaSub}>Un expert vous recontacte sous 24h</p>
           </div>
-          <Link href="/contact" className="btn btn-primary btn-lg">
+          <Link href="/contact" className={`btn btn-lg ${styles.ctaBtn}`}>
             Faire une demande
           </Link>
         </div>
@@ -41,7 +41,7 @@ export default function Footer() {
               <Image src="/logo.webp" alt="GT Cars Import" width={160} height={45} style={{ objectFit: 'contain' }} />
             </Link>
             <p className={styles.brandTagline}>
-              Spécialiste de l'importation de véhicules depuis l'Allemagne depuis 2020.
+              Spécialiste de la recherche et de l'importation de véhicules allemands depuis 2020.
             </p>
             <div className={styles.socialRow}>
               <a
@@ -66,7 +66,6 @@ export default function Footer() {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className={styles.footerLink}>
-                    <span className={styles.footerLinkArrow}>→</span>
                     {link.label}
                   </Link>
                 </li>
@@ -81,7 +80,6 @@ export default function Footer() {
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className={styles.footerLink}>
-                    <span className={styles.footerLinkArrow}>→</span>
                     {link.label}
                   </Link>
                 </li>
@@ -108,6 +106,10 @@ export default function Footer() {
                   </svg>
                   gtcarsimport44@gmail.com
                 </a>
+              </li>
+              <li className={styles.footerHours}>
+                Lundi au vendredi, 10h – 18h<br />
+                Samedi sur rendez-vous
               </li>
             </ul>
           </div>

@@ -9,11 +9,11 @@ export default function Confidentialite() {
   return (
     <main>
       {/* ── PAGE HEADER ───────────────────────────── */}
-      <section className="section-dark section-pad" style={{ paddingBottom: "3rem", borderBottom: "1px solid var(--border-dark)" }}>
+      <section className="page-header">
         <div className="container" style={{ textAlign: "center" }}>
           <p className="section-eyebrow">Vos données, notre priorité</p>
           <h1 className="section-title">Politique de <span>Confidentialité</span></h1>
-          <div className="red-line center" />
+          <div className="red-line" />
         </div>
       </section>
 

@@ -1,14 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 import Counter from "@/components/Counter";
+import Icon, { type IconName } from "@/components/Icon";
 import styles from "./page.module.css";
 
-const avantages = [
-  { icon: "🔍", label: "Historique et kilométrages vérifiés" },
-  { icon: "⚡", label: "Réactivité — Disponibilité — Efficacité" },
-  { icon: "🚛", label: "Livraison par camion en 10 jours dans toute l'Europe" },
-  { icon: "🔑", label: "Prestation clé en main" },
-  { icon: "🏦", label: "Transactions bancaires sécurisées" },
-  { icon: "🧑‍🔧", label: "Essai routier par nos experts allemands avant l'achat" },
+const avantages: { icon: IconName; label: string }[] = [
+  { icon: "search", label: "Historique et kilométrages vérifiés" },
+  { icon: "clock", label: "Réactivité, disponibilité, efficacité" },
+  { icon: "truck", label: "Livraison par camion en 10 jours dans toute l'Europe" },
+  { icon: "key", label: "Prestation clé en main" },
+  { icon: "lock", label: "Transactions bancaires sécurisées" },
+  { icon: "wheel", label: "Essai routier par nos experts allemands avant l'achat" },
+];
+
+const dernieres = [
+  { name: "Porsche 911 Turbo S", img: "/cars/Porsche-911-992-Turbo-S-1024x768.jpg" },
+  { name: "Audi RS3 Berline", img: "/cars/Audi-RS3-BERLINE-1024x768.jpg" },
+  { name: "Mercedes-AMG GLC 43 Coupé", img: "/cars/Mercedes-Benz-GLC-43-AMG-Coupe-2-1024x768.jpg" },
 ];
 
 const reviews = [
@@ -48,7 +56,7 @@ function Stars() {
   return (
     <span className={styles.stars} aria-label="5 étoiles">
       {[...Array(5)].map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#f5c518">
+        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#e0a800">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
         </svg>
       ))}
@@ -62,9 +70,12 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────── */}
       <section className={styles.hero} id="accueil">
         <div className={styles.heroBg}>
-          <img
-            src="https://gtcarsimport.com/wp-content/uploads/2025/04/banner-gtcarsimport3-min-scaled.webp"
-            alt="GT Cars Import - Bannière"
+          <Image
+            src="/hero.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
             className={styles.heroBgImg}
           />
           <div className={styles.heroBgOverlay} />
@@ -116,12 +127,12 @@ export default function Home() {
                 GT Cars <span>Import</span>
               </h2>
               <div className="red-line" />
-              <p style={{ color: "#444", lineHeight: "1.9", marginBottom: "1.5rem" }}>
+              <p className={styles.bodyText}>
                 Créée en <strong>2020</strong>, GT Cars Import est spécialisée dans la recherche et
                 l'importation de véhicules toutes gammes et toutes marques. Nous trouvons le modèle
                 qui vous correspond grâce à une recherche personnalisée et un accompagnement sur mesure.
               </p>
-              <p style={{ color: "#444", lineHeight: "1.9", marginBottom: "2rem" }}>
+              <p className={styles.bodyText} style={{ marginBottom: "2.25rem" }}>
                 Notre service premium vous garantit une expérience sans contrainte : <strong>recherche personnalisée</strong>,
                 expertise physique et <strong>livraison clé en main dans toute l'Europe</strong>.
               </p>
@@ -131,9 +142,9 @@ export default function Home() {
             </div>
             <div className={styles.twoColFeatures}>
               {avantages.map((a) => (
-                <div key={a.label} className={`card-light ${styles.avantageCard}`}>
-                  <span className={styles.avantageIcon}>{a.icon}</span>
-                  <p style={{ color: "#333", fontWeight: 500 }}>{a.label}</p>
+                <div key={a.label} className={styles.avantageCard}>
+                  <span className="icon-tile"><Icon name={a.icon} /></span>
+                  <p>{a.label}</p>
                 </div>
               ))}
             </div>
@@ -153,17 +164,42 @@ export default function Home() {
               partout en Europe, garantissant une validation complète avant l'achat.
             </p>
           </div>
-          <div className={`grid-3 ${styles.processGrid}`}>
+          <div className={styles.processGrid}>
             {[
               { num: "01", title: "Recherche", desc: "Nous analysons le marché allemand pour trouver le véhicule exact correspondant à vos critères." },
               { num: "02", title: "Expertise", desc: "Un cabinet indépendant réalise une expertise physique et un essai routier avant tout achat." },
               { num: "03", title: "Livraison", desc: "Votre véhicule est livré par camion à votre domicile dans toute l'Europe en 10 jours." },
             ].map((step) => (
-              <div key={step.num} className={`card-dark ${styles.processCard}`}>
+              <div key={step.num} className={styles.processCard}>
                 <span className={styles.processNum}>{step.num}</span>
                 <h3 className={styles.processTitle}>{step.title}</h3>
-                <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: "1.8" }}>{step.desc}</p>
+                <p className={styles.processDesc}>{step.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DERNIÈRES IMPORTATIONS (CLAIR) ───────────── */}
+      <section className="section-off-white section-pad">
+        <div className="container">
+          <div className={styles.stripHead}>
+            <div>
+              <p className="section-eyebrow">Livrés à nos clients</p>
+              <h2 className="section-title" style={{ color: "#111" }}>
+                Dernières <span>importations</span>
+              </h2>
+            </div>
+            <Link href="/importations" className={styles.stripLink}>
+              Voir nos importations <Icon name="arrow" size={16} />
+            </Link>
+          </div>
+          <div className={styles.strip}>
+            {dernieres.map((d) => (
+              <Link key={d.name} href="/importations" className={styles.stripItem}>
+                <Image src={d.img} alt={d.name} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                <span className={styles.stripCaption}>{d.name}</span>
+              </Link>
             ))}
           </div>
         </div>
@@ -183,7 +219,7 @@ export default function Home() {
           <div className={styles.pricingGrid}>
             {/* Pack Principal */}
             <div className={styles.pricingCard}>
-              <div className={styles.pricingBadge}>Le plus populaire</div>
+              <div className={styles.pricingBadge}>Le plus demandé</div>
               <h3 className={styles.pricingName}>Pack Clé en Main Frontière</h3>
               <p className={styles.pricingDesc}>
                 Livraison incluse par camion dans notre dépôt à la frontière.<br />
@@ -203,45 +239,41 @@ export default function Home() {
                   "Immatriculation complète incluse",
                 ].map((f) => (
                   <li key={f} className={styles.pricingFeature}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d90000" strokeWidth="2.5">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
+                    <Icon name="check" size={17} />
                     {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+              <Link href="/contact" className={`btn btn-primary ${styles.pricingCta}`}>
                 Faire une demande
               </Link>
             </div>
 
             {/* Option livraison */}
             <div className={`${styles.pricingCard} ${styles.pricingOption}`}>
-              <span className="label-tag label-tag-dark">Option</span>
-              <h3 className={styles.pricingName} style={{ color: "#111" }}>Livraison à Domicile</h3>
-              <p className={styles.pricingDesc} style={{ color: "#666" }}>
+              <div className={styles.pricingBadge}>Option</div>
+              <h3 className={styles.pricingName}>Livraison à Domicile</h3>
+              <p className={styles.pricingDesc}>
                 Livraison sécurisée par camion directement chez vous, partout en Europe. Délai 10 jours.
               </p>
               <div className={styles.pricingPrice}>
-                <span className={styles.pricingAmount} style={{ color: "#111" }}>+1€</span>
-                <span className={styles.pricingUnit} style={{ color: "#666" }}>/ km</span>
+                <span className={styles.pricingAmount}>+1€</span>
+                <span className={styles.pricingUnit}>/ km</span>
               </div>
               <ul className={styles.pricingFeatures}>
                 {[
                   "Livraison sécurisée par camion",
                   "À votre domicile ou bureau",
-                  "Toute l'Europe en -10 jours",
+                  "Toute l'Europe en moins de 10 jours",
                   "Devis effectué avec les transporteurs",
                 ].map((f) => (
                   <li key={f} className={`${styles.pricingFeature} ${styles.pricingFeatureLight}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d90000" strokeWidth="2.5">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
+                    <Icon name="check" size={17} />
                     {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn btn-outline-red" style={{ width: "100%", justifyContent: "center" }}>
+              <Link href="/contact" className={`btn btn-outline-red ${styles.pricingCta}`}>
                 Demander un devis
               </Link>
             </div>
@@ -270,24 +302,22 @@ export default function Home() {
                   "Expertise locale sur place avant achat",
                 ].map((p) => (
                   <div key={p} className={styles.keyPoint}>
-                    <div className={styles.keyPointDot} />
+                    <Icon name="check" size={17} />
                     <span>{p}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className={styles.parrainageCard}>
-              <div className={styles.parrainage}>
-                <div className={styles.parrainageTag}>Parrainage</div>
-                <h3 className={styles.parrainageTitle}>Recommandez-nous et gagnez</h3>
-                <div className={styles.parrainageAmount}>100€</div>
-                <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9rem", textAlign: "center" }}>
-                  Si vous êtes entièrement satisfait de nos services, recommandez-nous à votre entourage.
-                </p>
-                <Link href="/contact" className="btn btn-outline" style={{ marginTop: "1rem", justifyContent: "center" }}>
-                  En savoir plus
-                </Link>
-              </div>
+            <div className={styles.parrainage}>
+              <div className={styles.parrainageTag}>Parrainage</div>
+              <h3 className={styles.parrainageTitle}>Recommandez-nous et recevez</h3>
+              <div className={styles.parrainageAmount}>100€</div>
+              <p className={styles.parrainageText}>
+                Si vous êtes entièrement satisfait de nos services, recommandez-nous à votre entourage.
+              </p>
+              <Link href="/contact" className="btn btn-outline">
+                En savoir plus
+              </Link>
             </div>
           </div>
         </div>
@@ -297,21 +327,23 @@ export default function Home() {
       <section className="section-off-white section-pad" id="avis">
         <div className="container">
           <div className={styles.centeredHead}>
-            <p className="section-eyebrow" style={{ color: "#d90000" }}>Ce que disent nos clients</p>
+            <p className="section-eyebrow">Ce que disent nos clients</p>
             <h2 className="section-title" style={{ color: "#111" }}>
               Ils nous font <span>confiance</span>
             </h2>
             <div className="red-line center" />
             <div className={styles.ratingBadge}>
               <Stars />
-              <strong style={{ color: "#111" }}>EXCELLENT</strong>
-              <span style={{ color: "#666" }}>— Basé sur 137 avis Google</span>
+              <strong>Excellent</strong>
+              <span>137 avis Google</span>
             </div>
           </div>
 
           <div className={`grid-3 ${styles.reviewsGrid}`}>
             {reviews.map((r) => (
               <div key={r.name} className={`card-light ${styles.reviewCard}`}>
+                <Stars />
+                <p className={styles.reviewText}>{r.text}</p>
                 <div className={styles.reviewHeader}>
                   <div className={styles.reviewAvatar}>
                     {r.name.charAt(0).toUpperCase()}
@@ -321,13 +353,11 @@ export default function Home() {
                     <p className={styles.reviewDate}>{r.date}</p>
                   </div>
                 </div>
-                <Stars />
-                <p className={styles.reviewText}>{r.text}</p>
               </div>
             ))}
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+          <div className={styles.reviewsCta}>
             <a
               href="https://www.google.com/search?q=GT+Cars+Import+avis"
               target="_blank"

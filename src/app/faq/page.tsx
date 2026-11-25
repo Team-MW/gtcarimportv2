@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "FAQ | GT Cars Import",
@@ -49,14 +50,9 @@ export default function FAQ() {
   return (
     <main>
       {/* Header */}
-      <section style={{
-        background: "linear-gradient(135deg, #050505 0%, #1a0000 100%)",
-        paddingTop: "10rem",
-        paddingBottom: "5rem",
-        borderBottom: "1px solid rgba(217,0,0,0.2)",
-      }}>
+      <section className="page-header">
         <div className="container">
-          <p className="section-eyebrow">On répond à tout</p>
+          <p className="section-eyebrow">Vos questions</p>
           <h1 className="section-title">Questions <span>Fréquentes</span></h1>
           <div className="red-line" />
           <p className="section-subtitle">
@@ -68,46 +64,14 @@ export default function FAQ() {
       {/* FAQs (Blanc) */}
       <section className="section-light section-pad">
         <div className="container" style={{ maxWidth: "860px" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            {faqs.map((faq, i) => (
-              <details key={i} style={{
-                background: "#fff",
-                border: "1px solid #e8e8e8",
-                borderRadius: "12px",
-                overflow: "hidden",
-              }}>
-                <summary style={{
-                  padding: "1.5rem 2rem",
-                  cursor: "pointer",
-                  fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "1rem",
-                  color: "#111",
-                  listStyle: "none",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  gap: "1rem",
-                  userSelect: "none",
-                }}>
+          <div className="faq-list">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="faq-item">
+                <summary>
                   {faq.q}
-                  <span style={{
-                    color: "#d90000",
-                    fontSize: "1.4rem",
-                    fontWeight: 300,
-                    flex: "0 0 auto",
-                  }}>+</span>
+                  <Icon name="chevron" size={20} />
                 </summary>
-                <div style={{
-                  padding: "0 2rem 1.5rem",
-                  color: "#555",
-                  lineHeight: "1.8",
-                  fontSize: "0.95rem",
-                  borderTop: "1px solid #f0f0f0",
-                  paddingTop: "1.2rem",
-                }}>
-                  {faq.a}
-                </div>
+                <p className="faq-answer">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -125,7 +89,7 @@ export default function FAQ() {
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a href="tel:0970702675" className="btn btn-primary btn-lg">
-              📞 09 70 70 26 75
+              <Icon name="phone" size={17} /> 09 70 70 26 75
             </a>
             <Link href="/contact" className="btn btn-outline btn-lg">
               Formulaire de contact

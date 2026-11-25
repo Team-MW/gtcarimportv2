@@ -1,37 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..112,500..800&family=Inter:wght@400;500;600;700&display=swap');
 
 /* ============================================================
    DESIGN TOKENS
 ============================================================ */
 :root {
-  --black:          #050505;
-  --dark:           #0d0d0d;
-  --dark-2:         #141414;
-  --dark-card:      #1a1a1a;
+  --black:          #0a0a0a;
+  --dark:           #0f0f0f;
+  --dark-2:         #111111;
+  --dark-card:      #151515;
   --white:          #ffffff;
-  --off-white:      #f5f5f5;
-  --gray-light:     #e8e8e8;
-  --gray:           #aaaaaa;
+  --off-white:      #f6f5f3;
+  --gray-light:     #e6e4e0;
+  --gray:           #9a9a9a;
+  --ink:            #111111;
+  --ink-soft:       #55524d;
   --red:            #d90000;
-  --red-hover:      #ff1a1a;
-  --red-light:      rgba(217, 0, 0, 0.1);
-  --red-glow:       rgba(217, 0, 0, 0.3);
-  --border-dark:    rgba(255, 255, 255, 0.07);
-  --border-light:   rgba(0, 0, 0, 0.1);
+  --red-hover:      #b80000;
+  --red-light:      rgba(217, 0, 0, 0.07);
+  --red-glow:       rgba(217, 0, 0, 0.18);
+  --border-dark:    rgba(255, 255, 255, 0.1);
+  --border-light:   #e6e4e0;
 
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 
-  --shadow-sm:  0 2px 8px rgba(0,0,0,0.15);
-  --shadow-md:  0 8px 24px rgba(0,0,0,0.25);
-  --shadow-lg:  0 20px 50px rgba(0,0,0,0.4);
-  --shadow-red: 0 8px 30px rgba(217, 0, 0, 0.25);
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg:  0 24px 60px rgba(0,0,0,0.18);
+  --shadow-red: none;
 
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
 
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================================
@@ -116,8 +118,10 @@ ul { list-style: none; }
 ============================================================ */
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
-  font-weight: 800;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .label-tag {
@@ -126,10 +130,10 @@ h1, h2, h3, h4, h5 {
   color: var(--white);
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 1.2rem;
 }
 
@@ -140,19 +144,20 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--red);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
   margin-bottom: 1.5rem;
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 700;
+  font-stretch: 108%;
 }
 
 .section-title span {
@@ -160,14 +165,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
-  color: var(--gray);
-  max-width: 650px;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.62);
+  max-width: 620px;
+  line-height: 1.75;
 }
 
 .section-subtitle.light {
-  color: #555;
+  color: var(--ink-soft);
 }
 
 /* ============================================================
@@ -177,20 +182,28 @@ h1, h2, h3, h4, h5 {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.75rem 1.4rem;
+  padding: 0.85rem 1.4rem;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-family: var(--font-heading);
-  letter-spacing: 0.5px;
-  border: 2px solid transparent;
-  transition: all var(--transition);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
   cursor: pointer;
   white-space: nowrap;
 }
 
 @media (min-width: 768px) {
-  .btn { padding: 0.85rem 2rem; font-size: 0.95rem; }
+  .btn { padding: 0.95rem 1.8rem; font-size: 0.8rem; }
+}
+
+.btn:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
 }
 
 .btn-primary {
@@ -203,49 +216,43 @@ h1, h2, h3, h4, h5 {
   background-color: var(--red-hover);
   border-color: var(--red-hover);
   color: var(--white);
-  box-shadow: var(--shadow-red);
-  transform: translateY(-2px);
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--white);
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.35);
 }
 
 .btn-outline:hover {
   background-color: var(--white);
   color: var(--black);
   border-color: var(--white);
-  transform: translateY(-2px);
 }
 
 .btn-outline-red {
   background-color: transparent;
-  color: var(--red);
-  border-color: var(--red);
+  color: var(--ink);
+  border-color: var(--ink);
 }
 
 .btn-outline-red:hover {
-  background-color: var(--red);
+  background-color: var(--ink);
   color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-red);
 }
 
 .btn-lg {
-  padding: 1.1rem 2.6rem;
-  font-size: 1.05rem;
+  padding: 1.1rem 2.2rem;
+  font-size: 0.82rem;
 }
 
 /* ============================================================
    DIVIDER
 ============================================================ */
 .red-line {
-  width: 60px;
-  height: 4px;
+  width: 40px;
+  height: 2px;
   background-color: var(--red);
-  border-radius: 2px;
   margin-bottom: 2rem;
 }
 
@@ -261,31 +268,10 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  color: #f1f1f1;
-  background-color: #050505;
-  overflow-x: hidden;
-  line-height: 1.6;
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('/pattern-bg.png');
-  background-repeat: repeat;
-  background-size: 300px;
-  opacity: 0.03; /* Transparence très subtile pour l'élégance */
-  pointer-events: none;
-  z-index: -1;
-}
-
 .stat-badge .number {
   font-family: var(--font-heading);
   font-size: 2.8rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--red);
   line-height: 1;
 }
@@ -306,13 +292,12 @@ body::before {
   border: 1px solid var(--border-dark);
   border-radius: var(--radius-md);
   padding: 2rem;
-  transition: all var(--transition);
+  transition: border-color var(--transition), background-color var(--transition);
 }
 
 .card-dark:hover {
-  border-color: var(--red);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-red);
+  border-color: rgba(255,255,255,0.28);
+  background-color: #191919;
 }
 
 .card-light {
@@ -320,14 +305,106 @@ body::before {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 2rem;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition);
+  transition: border-color var(--transition);
 }
 
 .card-light:hover {
-  border-color: var(--red);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(217,0,0,0.1);
+  border-color: var(--ink);
+}
+
+/* ============================================================
+   ICON TILE
+============================================================ */
+.icon-tile {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--red);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+}
+
+.icon-tile.on-dark {
+  border-color: var(--border-dark);
+  background: transparent;
+}
+
+/* ============================================================
+   PAGE HEADER (pages intérieures)
+============================================================ */
+.page-header {
+  background-color: var(--black);
+  padding-top: 8.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.page-header .section-title {
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  margin-bottom: 1.25rem;
+}
+
+.page-header .red-line { margin-bottom: 1.5rem; }
+
+@media (min-width: 768px) {
+  .page-header { padding-top: 11rem; padding-bottom: 5rem; }
+}
+
+/* ============================================================
+   FAQ ACCORDION
+============================================================ */
+.faq-list {
+  border-top: 1px solid var(--border-light);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color var(--transition);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--red); }
+
+.faq-item summary svg {
+  flex-shrink: 0;
+  color: var(--ink);
+  transition: transform var(--transition), color var(--transition);
+}
+
+.faq-item[open] summary svg {
+  transform: rotate(180deg);
+  color: var(--red);
+}
+
+.faq-answer {
+  padding: 0 3rem 1.75rem 0;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-size: 0.97rem;
+  max-width: 70ch;
+}
+
+@media (max-width: 640px) {
+  .faq-answer { padding-right: 0; }
 }
 
 /* ============================================================
@@ -440,13 +517,13 @@ textarea.form-control {
 
 .floating-whatsapp-cta .btn {
   border-radius: 50px;
-  background-color: #25D366;
+  background-color: #1faa52;
   color: #ffffff;
   border: none;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-  font-size: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  font-size: 0.78rem;
   font-weight: 600;
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.2rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -455,8 +532,7 @@ textarea.form-control {
 }
 
 .floating-whatsapp-cta .btn:hover {
-  background-color: #1ebe57;
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+  background-color: #178a42;
   color: #ffffff;
 }
 

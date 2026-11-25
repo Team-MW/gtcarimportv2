@@ -8,16 +8,15 @@
 /* Form Card */
 .formCard {
   background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
   padding: 2.5rem;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-}
+  }
 
 .formTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #111;
   margin-bottom: 1.8rem;
   padding-bottom: 1.2rem;
@@ -68,14 +67,13 @@
 
 .infoBlock {
   background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
+  }
 
 .infoTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: #111;
@@ -101,8 +99,9 @@
 .infoIcon {
   width: 40px;
   height: 40px;
-  background: rgba(217,0,0,0.08);
-  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,15 +125,21 @@
   transition: color 0.2s ease;
 }
 
-.infoValue:hover {
+a.infoValue:hover {
   color: #d90000;
+}
+
+.infoNote {
+  font-size: 0.82rem;
+  color: #8a867f;
+  margin-top: 0.15rem;
 }
 
 /* Promesses */
 .promessesBlock {
-  background: linear-gradient(135deg, #0d0d0d, #1a0000);
-  border: 1px solid rgba(217,0,0,0.2);
-  border-radius: 16px;
+  background: var(--black);
+  border: 1px solid var(--black);
+  border-radius: var(--radius-lg);
   padding: 2rem;
 }
 
@@ -147,7 +152,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .promesseItem:last-child {
@@ -155,13 +160,13 @@
 }
 
 .promesseIcon {
-  font-size: 1.2rem;
+  color: #d90000;
   flex-shrink: 0;
 }
 
 .promesseLabel {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
+  font-size: 0.93rem;
+  color: rgba(255,255,255,0.85);
   font-weight: 500;
 }
 
