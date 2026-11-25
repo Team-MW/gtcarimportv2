@@ -4,7 +4,6 @@ import { MetadataRoute } from 'next'
 const pages: { path: string; changeFrequency: 'weekly' | 'monthly' | 'yearly'; priority: number }[] = [
   { path: '/', changeFrequency: 'weekly', priority: 1 },
   { path: '/importations/', changeFrequency: 'weekly', priority: 0.9 },
-  { path: '/a-propos/', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/faire-une-demande/', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/faq/', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/mentions-legales/', changeFrequency: 'yearly', priority: 0.3 },

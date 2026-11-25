@@ -5,7 +5,9 @@ const legacyRedirects: [string, string][] = [
   // Version suisse de l'ancien site
   ["/ch", "/"],
   ["/ch/home-sw", "/"],
-  ["/ch/a-propos-2", "/a-propos/"],
+  ["/ch/a-propos-2", "/"],
+  // Page À propos supprimée
+  ["/a-propos", "/"],
   ["/ch/nos-importations-sw", "/importations/"],
   ["/ch/faq-sw", "/faq/"],
   ["/ch/faire-une-demande-sw", "/faire-une-demande/"],

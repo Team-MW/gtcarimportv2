@@ -44,7 +44,7 @@ const optionFeatures = [
 ];
 
 const fiscalite = [
-  "Prestations facturées en CHF TTC (TVA suisse 8,1 %)",
+  "Prestations facturées en euros TTC (TVA suisse 8,1 %)",
   "Aucune taxe CO₂ à prévoir pour les véhicules de plus de 12 mois et de plus de 5 000 km",
   "Véhicule livré clé en main, prêt à immatriculer",
   "Certificat EUR.1 vérifié systématiquement pour éviter 4 % de droits de douane",
@@ -80,7 +80,7 @@ const reviews = [
   {
     name: "Louis Mercier",
     date: "il y a 1 année",
-    text: "J'ai commandé une Mercedes importée et tout s'est bien passé. Patrick Edwar a été dispo et pro. Voiture livrée propre, bien entretenue et à un prix plus bas que chez un concessionnaire français.",
+    text: "J'ai commandé une Mercedes importée et tout s'est bien passé. Patrick Edwar a été dispo et pro. Voiture livrée propre, bien entretenue…",
   },
   {
     name: "Dabo Baradji",
@@ -132,8 +132,8 @@ export default function Home() {
             <Link href="/faire-une-demande" className="btn btn-primary btn-lg">
               Je recherche un véhicule
             </Link>
-            <Link href="/a-propos" className="btn btn-outline btn-lg">
-              En savoir plus
+            <Link href="/importations" className="btn btn-outline btn-lg">
+              Voir nos importations
             </Link>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function Home() {
               </h2>
               <div className="red-line" />
               <p className={styles.bodyText}>
-                Créée en <strong>2020</strong>, GT Cars Import est spécialisée dans la recherche et
+                GT Cars Import est spécialisée dans la recherche et
                 l'importation de véhicules toutes gammes et toutes marques. Nous trouvons le modèle
                 qui vous correspond grâce à une recherche personnalisée et un accompagnement sur mesure.
               </p>
@@ -175,8 +175,8 @@ export default function Home() {
                 Notre service premium vous garantit une expérience sans contrainte : <strong>recherche personnalisée</strong>,
                 expertise physique et <strong>livraison clé en main en Suisse</strong>.
               </p>
-              <Link href="/a-propos" className="btn btn-outline-red">
-                En savoir plus
+              <Link href="/faire-une-demande" className="btn btn-outline-red">
+                Faire une demande
               </Link>
             </div>
             <div className={styles.twoColFeatures}>
@@ -266,7 +266,7 @@ export default function Home() {
               </p>
               <div className={styles.pricingPrice}>
                 <span className={styles.pricingAmount}>2 990</span>
-                <span className={styles.pricingUnit}>CHF TTC</span>
+                <span className={styles.pricingUnit}>€ TTC</span>
               </div>
               <ul className={styles.pricingFeatures}>
                 {packFeatures.map((f) => (
@@ -290,7 +290,7 @@ export default function Home() {
               </p>
               <div className={styles.pricingPrice}>
                 <span className={styles.pricingAmount}>+ 890</span>
-                <span className={styles.pricingUnit}>CHF</span>
+                <span className={styles.pricingUnit}>€</span>
               </div>
               <ul className={styles.pricingFeatures}>
                 {optionFeatures.map((f) => (

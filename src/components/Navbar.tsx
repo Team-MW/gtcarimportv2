@@ -9,7 +9,6 @@ import styles from "./Navbar.module.css";
 
 const links = [
   { label: "Accueil", href: "/" },
-  { label: "À propos", href: "/a-propos" },
   { label: "Nos Importations", href: "/importations" },
   { label: "FAQ", href: "/faq" },
 ];

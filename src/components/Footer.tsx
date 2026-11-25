@@ -6,7 +6,6 @@ import styles from "./Footer.module.css";
 
 const navLinks = [
   { label: "Accueil", href: "/" },
-  { label: "À propos", href: "/a-propos" },
   { label: "Nos Importations", href: "/importations" },
   { label: "FAQ", href: "/faq" },
   { label: "Faire une demande", href: "/faire-une-demande" },

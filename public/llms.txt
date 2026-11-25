@@ -33,7 +33,6 @@
 ## Pages
 
 - [Accueil](https://gtcarsimport.com/)
-- [À propos](https://gtcarsimport.com/a-propos/)
 - [Nos importations](https://gtcarsimport.com/importations/)
 - [FAQ](https://gtcarsimport.com/faq/)
 - [Faire une demande](https://gtcarsimport.com/faire-une-demande/)
