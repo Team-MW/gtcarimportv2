@@ -619,6 +619,111 @@
   margin-top: 3rem;
 }
 
+/* ── INSTAGRAM ────────────────────────────── */
+.instaHead {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.instaHead :global(.section-subtitle) { max-width: 520px; }
+
+@media (min-width: 1000px) {
+  .instaHead {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+}
+
+.instaProfile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 1rem 1.1rem;
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  background: var(--dark-card);
+  transition: border-color var(--transition);
+  flex-shrink: 0;
+}
+
+.instaProfile:hover { border-color: rgba(255,255,255,0.3); }
+
+.instaAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.instaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  margin-right: 1.25rem;
+}
+
+.instaHandle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.instaMeta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.instaBtn { margin-left: auto; }
+
+.instaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) { .instaGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .instaGrid { grid-template-columns: repeat(6, 1fr); } }
+
+.instaItem {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #1a1a1a;
+}
+
+.instaItem img {
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.instaItem:hover img { transform: scale(1.05); }
+
+.instaOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.instaItem:hover .instaOverlay,
+.instaItem:focus-visible .instaOverlay { opacity: 1; }
+
 /* ── RESPONSIVE ────────────────────────── */
 @media (max-width: 767px) {
   .heroStatsInner { grid-template-columns: 1fr 1fr; }
@@ -633,4 +738,7 @@
   .pricingCard { padding: 2rem 1.5rem; }
   .parrainage { padding: 2.25rem 1.5rem; }
   .centeredHead { margin-bottom: 2.5rem; }
+  .instaProfile { flex-wrap: wrap; }
+  .instaInfo { margin-right: 0; }
+  .instaBtn { width: 100%; justify-content: center; margin-left: 0; }
 }

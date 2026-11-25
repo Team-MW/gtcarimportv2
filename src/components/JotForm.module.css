@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 600px;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -15,8 +15,8 @@
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
-  background: #f9f9f9;
-  border-radius: 12px;
+  background: #000;
+  border-radius: 0;
   z-index: 2;
 }
 

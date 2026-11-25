@@ -13,6 +13,17 @@ const avantages: { icon: IconName; label: string }[] = [
   { icon: "wheel", label: "Essai routier par nos experts allemands avant l'achat" },
 ];
 
+const INSTAGRAM_URL = "https://www.instagram.com/gt_cars_import/";
+
+const instagramPosts = [
+  { img: "/instagram/post-1.jpg", alt: "Deux BMW M4 devant le showroom GT Cars Import" },
+  { img: "/cars/Bmw-M3-1024x768.jpg", alt: "BMW M3 Competition verte importée par GT Cars Import" },
+  { img: "/instagram/post-2.jpg", alt: "BMW M4 CSL blanche importée par GT Cars Import" },
+  { img: "/cars/Dodge-Challenger-Scat-Pack-1024x768.jpg", alt: "Dodge Challenger Scat Pack bleue importée par GT Cars Import" },
+  { img: "/instagram/post-3.jpg", alt: "Volkswagen Golf GTI blanche importée par GT Cars Import" },
+  { img: "/cars/Dodge-Charger-Scat-1024x768.jpg", alt: "Dodge Charger Scat Pack orange importée par GT Cars Import" },
+];
+
 const packFeatures = [
   "Recherche personnalisée selon vos critères (budget, motorisation, options)",
   "Vérification complète par nos experts allemands + rapport Carvertical",
@@ -400,6 +411,69 @@ export default function Home() {
             >
               Voir tous les avis
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── INSTAGRAM (NOIR) ─────────────────────────── */}
+      <section className="section-dark section-pad" id="instagram">
+        <div className="container">
+          <div className={styles.instaHead}>
+            <div>
+              <p className="section-eyebrow">Suivez nos arrivages</p>
+              <h2 className="section-title">
+                Rejoignez-nous sur <span>Instagram</span>
+              </h2>
+              <p className="section-subtitle">
+                Nouveaux arrivages, véhicules livrés et coulisses de nos importations,
+                à suivre au quotidien sur notre compte.
+              </p>
+            </div>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.instaProfile}
+            >
+              <Image
+                src="/instagram/profil.jpg"
+                alt=""
+                width={64}
+                height={64}
+                className={styles.instaAvatar}
+              />
+              <span className={styles.instaInfo}>
+                <span className={styles.instaHandle}>
+                  gt_cars_import
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-label="Compte vérifié" role="img">
+                    <path fill="#3897f0" d="M12 1.5l2.6 1.9 3.2-.1 1 3.1 2.6 1.9-1 3.1 1 3.1-2.6 1.9-1 3.1-3.2-.1L12 22.5l-2.6-1.9-3.2.1-1-3.1-2.6-1.9 1-3.1-1-3.1 2.6-1.9 1-3.1 3.2.1z" />
+                    <path fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="m8.3 12.3 2.5 2.5 4.9-5.2" />
+                  </svg>
+                </span>
+                <span className={styles.instaMeta}>Plus de 54 000 abonnés</span>
+              </span>
+              <span className={`btn btn-primary ${styles.instaBtn}`}>
+                <Icon name="instagram" size={17} /> Suivre
+              </span>
+            </a>
+          </div>
+
+          <div className={styles.instaGrid}>
+            {instagramPosts.map((post) => (
+              <a
+                key={post.img}
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.instaItem}
+                aria-label={`${post.alt} – voir sur Instagram`}
+              >
+                <Image src={post.img} alt={post.alt} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 17vw" />
+                <span className={styles.instaOverlay}>
+                  <Icon name="instagram" size={26} />
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>

@@ -19,7 +19,10 @@ export type IconName =
   | "plug"
   | "chevron"
   | "arrow"
-  | "document";
+  | "document"
+  | "instagram"
+  | "mail"
+  | "chat";
 
 const paths: Record<IconName, ReactNode> = {
   search: (
@@ -136,6 +139,22 @@ const paths: Record<IconName, ReactNode> = {
       <path d="M5 12h14" />
       <path d="m13 6 6 6-6 6" />
     </>
+  ),
+  instagram: (
+    <>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17" cy="7" r="0.6" fill="currentColor" />
+    </>
+  ),
+  mail: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="1.5" />
+      <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+    </>
+  ),
+  chat: (
+    <path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.4A8.5 8.5 0 1 1 20.5 11.5z" />
   ),
   document: (
     <>
