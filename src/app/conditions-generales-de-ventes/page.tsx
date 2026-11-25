@@ -60,7 +60,14 @@ export default function CGV() {
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>6. Modalités de paiement</h2>
           <p style={{ marginBottom: "2rem" }}>
-            Le paiement est exigible immédiatement à la commande. Le Client règle sa commande par virement bancaire.
+            Aucun paiement n’est demandé au Client avant qu’il ait validé l’importation du véhicule sélectionné.
+            Une fois l’importation validée, le Client règle par virement bancaire, d’une part, le prix de la
+            prestation du Vendeur et, d’autre part, le prix du véhicule, versé directement au vendeur allemand
+            dans le cadre du contrat d’achat établi au nom du Client.
+          </p>
+          <p style={{ marginBottom: "2rem" }}>
+            Le véhicule n’est ni récupéré ni livré tant que le paiement intégral du véhicule et de la prestation
+            n’a pas été reçu.
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>7. Livraison</h2>
@@ -68,9 +75,20 @@ export default function CGV() {
             Les livraisons sont faites à l’adresse indiquée dans le bon de commande. Les risques sont à la charge du Client à compter du moment où les produits ont quitté les locaux du Vendeur. En cas de dommage pendant le transport, la protestation motivée doit être formulée auprès du transporteur dans un délai de trois jours à compter de la livraison.
           </p>
 
-          <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>8. Rétractation</h2>
+          <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>8. Annulation de la commande</h2>
+          <p style={{ marginBottom: "1rem" }}>
+            Le Client peut annuler sa demande sans frais à tout moment tant qu’il n’a pas validé l’importation
+            du véhicule sélectionné.
+          </p>
+          <p style={{ marginBottom: "1rem" }}>
+            Chaque véhicule est recherché, expertisé et acheté spécialement pour le Client, selon ses critères.
+            Une fois l’importation validée et le contrat d’achat du véhicule signé, la commande est ferme et
+            définitive : elle ne peut plus être annulée et les sommes versées ne sont pas remboursables, sauf
+            accord écrit du Vendeur.
+          </p>
           <p style={{ marginBottom: "2rem" }}>
-            Conformément aux dispositions légales en vigueur, le Client dispose d’un délai de 14 jours à compter de la réception de ses produits pour exercer son droit de rétractation sans avoir à justifier de motifs ni à payer de pénalité, à l’exception des frais de retour.
+            Si le véhicule livré ne correspond pas au véhicule décrit dans le rapport d’expertise validé par
+            le Client, les dispositions de l’article 9 (Garantie) s’appliquent.
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>9. Garantie</h2>

@@ -45,15 +45,15 @@ export default function MentionsLegales() {
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>Hébergement</h2>
           <p style={{ marginBottom: "1rem" }}>
-            Le Site est hébergé par la société <strong>Infomaniak Network SA</strong>, dont le siège social est situé :
+            Le Site est hébergé par la société <strong>Vercel Inc.</strong>, dont le siège social est situé :
           </p>
           <p style={{ marginLeft: "1rem", borderLeft: "3px solid var(--red)", paddingLeft: "1rem", marginBottom: "1rem", backgroundColor: "var(--off-white)", padding: "1rem" }}>
-            Rue Eugène-Marziano 25<br />
-            1227 Les Acacias (Genève)<br />
-            Suisse
+            440 N Barranca Avenue #4133<br />
+            Covina, CA 91723<br />
+            États-Unis
           </p>
           <p style={{ marginBottom: "2rem" }}>
-            Téléphone : +41 22 820 35 44
+            Site web : https://vercel.com
           </p>
 
           <h2 style={{ color: "#111", marginTop: "2.5rem", marginBottom: "1rem", fontFamily: "var(--font-heading)", fontSize: "1.8rem" }}>Directeur de la publication</h2>
