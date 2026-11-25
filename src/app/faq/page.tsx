@@ -1,11 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Icon from "@/components/Icon";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "FAQ | GT Cars Import",
   description: "Toutes les réponses à vos questions sur l'importation de véhicules depuis l'Allemagne avec GT Cars Import.",
-};
+  path: "/faq",
+});
 
 const faqs = [
   {
@@ -91,7 +93,7 @@ export default function FAQ() {
             <a href="tel:0970702675" className="btn btn-primary btn-lg">
               <Icon name="phone" size={17} /> 09 70 70 26 75
             </a>
-            <Link href="/contact" className="btn btn-outline btn-lg">
+            <Link href="/faire-une-demande" className="btn btn-outline btn-lg">
               Formulaire de contact
             </Link>
           </div>

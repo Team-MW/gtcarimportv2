@@ -1,31 +1,19 @@
 import type { Metadata } from "next";
+import { pageMetadata, SITE_URL } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gtcarsimport.com"),
-  title: "GT Cars Import | Importation de Véhicules Allemands",
-  description:
-    "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
-  keywords: "import voiture Allemagne, importation véhicule, GT Cars Import, voiture allemande pas chère, mandataire auto, mandataire allemagne",
-
-  openGraph: {
-    title: "GT Cars Import | Importation de Véhicules Allemands",
-    description: "Spécialiste de l'importation de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique et livraison clé en main dans toute l'Europe.",
-    url: "https://gtcarsimport.com",
-    siteName: "GT Cars Import",
-    locale: "fr_CH",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "GT Cars Import | Importation de Véhicules Allemands",
-    description: "Spécialiste de l'importation de véhicules allemands depuis 2020.",
-  },
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({
+    title: "GT Cars Import | Import de véhicules allemands",
+    description:
+      "Courtier spécialiste de l'import de véhicules allemands depuis 2020. Recherche personnalisée, expertise physique, immatriculation et livraison clé en main en Suisse et en Europe.",
+    path: "/",
+  }),
+  keywords:
+    "import véhicule allemand, import voiture Allemagne, importation véhicule Suisse, courtier automobile, GT Cars Import, mandataire auto Allemagne",
 };
 
 export default function RootLayout({
@@ -79,7 +67,7 @@ export default function RootLayout({
                 "contactType": "customer service",
                 "telephone": "+33970702675",
                 "email": "gtcarsimport44@gmail.com",
-                "url": "https://gtcarsimport.com/contact",
+                "url": "https://gtcarsimport.com/faire-une-demande",
                 "availableLanguage": ["fr"]
               },
               "address": {

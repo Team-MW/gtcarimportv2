@@ -7,13 +7,13 @@ const navLinks = [
   { label: "À propos", href: "/a-propos" },
   { label: "Nos Importations", href: "/importations" },
   { label: "FAQ", href: "/faq" },
-  { label: "Faire une demande", href: "/contact" },
+  { label: "Faire une demande", href: "/faire-une-demande" },
 ];
 
 const legalLinks = [
   { label: "Mentions Légales", href: "/mentions-legales" },
-  { label: "Politique de confidentialité", href: "/confidentialite" },
-  { label: "Conditions générales de vente", href: "/cgv" },
+  { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+  { label: "Conditions générales de vente", href: "/conditions-generales-de-ventes" },
 ];
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
             <h2 className={styles.ctaTitle}>Parlons de votre prochain véhicule</h2>
             <p className={styles.ctaSub}>Un expert vous recontacte sous 24h</p>
           </div>
-          <Link href="/contact" className={`btn btn-lg ${styles.ctaBtn}`}>
+          <Link href="/faire-une-demande" className={`btn btn-lg ${styles.ctaBtn}`}>
             Faire une demande
           </Link>
         </div>

@@ -59,7 +59,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className={styles.navActions}>
-          <Link href="/contact" className="btn btn-primary">
+          <Link href="/faire-une-demande" className="btn btn-primary">
             Faire une demande
           </Link>
           <button
@@ -88,7 +88,7 @@ export default function Navbar() {
           </Link>
         ))}
         <Link 
-          href="/contact" 
+          href="/faire-une-demande" 
           className={`btn btn-primary ${styles.mobileCta}`}
           onClick={() => setMenuOpen(false)}
         >

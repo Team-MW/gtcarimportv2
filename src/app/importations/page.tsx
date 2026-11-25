@@ -1,13 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Icon, { type IconName } from "@/components/Icon";
 import styles from "./importations.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Nos Importations | GT Cars Import",
   description: "Découvrez notre processus d'importation de véhicules allemands et nos packs disponibles.",
-};
+  path: "/importations",
+});
 
 const categories: { icon: IconName; name: string; ex: string; desc: string }[] = [
   { icon: "gauge", name: "Sportives", ex: "BMW M, AMG, RS, GTI, Type R…", desc: "Des performances exceptionnelles importées directement depuis le marché allemand." },
@@ -154,7 +156,7 @@ export default function Importations() {
           <p style={{ color: "var(--ink-soft)", maxWidth: "600px", margin: "0 auto 2rem", lineHeight: "1.8" }}>
             Remplissez notre formulaire de demande et un expert vous contacte sous 24h.
           </p>
-          <Link href="/contact" className="btn btn-primary btn-lg">
+          <Link href="/faire-une-demande" className="btn btn-primary btn-lg">
             Faire une demande
           </Link>
         </div>

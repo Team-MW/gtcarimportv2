@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Conditions Générales de Vente | GT Cars Import",
   description: "Conditions générales de vente de GT Cars Import.",
-};
+  path: "/conditions-generales-de-ventes",
+});
 
 export default function CGV() {
   return (

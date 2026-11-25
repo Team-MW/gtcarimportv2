@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Politique de Confidentialité | GT Cars Import",
   description: "Politique de confidentialité et protection des données personnelles de GT Cars Import.",
-};
+  path: "/politique-de-confidentialite",
+});
 
 export default function Confidentialite() {
   return (

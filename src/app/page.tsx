@@ -90,7 +90,7 @@ export default function Home() {
             et toutes marques directement depuis l'Allemagne.
           </p>
           <div className={styles.heroCtas}>
-            <Link href="/contact" className="btn btn-primary btn-lg">
+            <Link href="/faire-une-demande" className="btn btn-primary btn-lg">
               Je recherche un véhicule
             </Link>
             <Link href="/a-propos" className="btn btn-outline btn-lg">
@@ -244,7 +244,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className={`btn btn-primary ${styles.pricingCta}`}>
+              <Link href="/faire-une-demande" className={`btn btn-primary ${styles.pricingCta}`}>
                 Faire une demande
               </Link>
             </div>
@@ -273,7 +273,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className={`btn btn-outline-red ${styles.pricingCta}`}>
+              <Link href="/faire-une-demande" className={`btn btn-outline-red ${styles.pricingCta}`}>
                 Demander un devis
               </Link>
             </div>
@@ -315,7 +315,7 @@ export default function Home() {
               <p className={styles.parrainageText}>
                 Si vous êtes entièrement satisfait de nos services, recommandez-nous à votre entourage.
               </p>
-              <Link href="/contact" className="btn btn-outline">
+              <Link href="/faire-une-demande" className="btn btn-outline">
                 En savoir plus
               </Link>
             </div>

@@ -1,12 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Icon, { type IconName } from "@/components/Icon";
 import styles from "./a-propos.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "À propos | GT Cars Import",
   description: "Découvrez GT Cars Import, spécialiste de l'importation de véhicules allemands depuis 2020. Notre équipe d'experts à votre service.",
-};
+  path: "/a-propos",
+});
 
 const team = [
   { name: "Patrick Rownicki", role: "Expert Allemand", initials: "PR" },
@@ -133,7 +135,7 @@ export default function APropos() {
             N'attendez plus et faites une<br /><span>demande personnalisée</span>
           </h2>
           <div className="red-line center" />
-          <Link href="/contact" className="btn btn-primary btn-lg" style={{ marginTop: "1rem" }}>
+          <Link href="/faire-une-demande" className="btn btn-primary btn-lg" style={{ marginTop: "1rem" }}>
             Faire une demande
           </Link>
         </div>

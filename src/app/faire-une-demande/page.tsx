@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import styles from "./contact.module.css";
 import JotForm from "@/components/JotForm";
 import Icon from "@/components/Icon";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Faire une demande | GT Cars Import",
   description: "Faites une demande personnalisée d'importation de véhicule. Notre équipe vous recontacte sous 24h.",
-};
+  path: "/faire-une-demande",
+});
 
 export default function Contact() {
   return (
