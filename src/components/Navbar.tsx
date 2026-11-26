@@ -6,17 +6,22 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import LogoLink from "./LogoLink";
 import styles from "./Navbar.module.css";
+import { isSwissPath, localize } from "@/lib/region";
 
 const links = [
   { label: "Accueil", href: "/" },
-  { label: "Nos Importations", href: "/importations" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Nos Importations", href: "/importations/" },
+  { label: "FAQ", href: "/faq/" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const region = isSwissPath(pathname) ? "ch" : "fr";
+  const navLinks = links.map((l) => ({ ...l, href: localize(l.href, region) }));
+  const demandeHref = localize("/faire-une-demande/", region);
+  const isActive = (href: string) => pathname === href || pathname === href.replace(/\/$/, "");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -45,11 +50,11 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <ul className={styles.navLinks}>
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`${styles.navLink} ${pathname === link.href ? styles.active : ""}`}
+                className={`${styles.navLink} ${isActive(link.href) ? styles.active : ""}`}
               >
                 {link.label}
               </Link>
@@ -59,7 +64,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className={styles.navActions}>
-          <Link href="/faire-une-demande" className="btn btn-primary">
+          <Link href={demandeHref} className="btn btn-primary">
             Faire une demande
           </Link>
           <button
@@ -77,18 +82,18 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileOpen : ""}`}>
-        {links.map((link) => (
+        {navLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className={`${styles.mobileLink} ${pathname === link.href ? styles.active : ""}`}
+            className={`${styles.mobileLink} ${isActive(link.href) ? styles.active : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             {link.label}
           </Link>
         ))}
         <Link 
-          href="/faire-une-demande" 
+          href={demandeHref} 
           className={`btn btn-primary ${styles.mobileCta}`}
           onClick={() => setMenuOpen(false)}
         >

@@ -504,38 +504,3 @@ textarea.form-control {
   transform: translateY(0);
 }
 
-/* ============================================================
-   FLOATING WHATSAPP CTA
-=========================================================== */
-.floating-whatsapp-cta {
-  display: block;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 999;
-}
-
-.floating-whatsapp-cta .btn {
-  border-radius: 50px;
-  background-color: #1faa52;
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.75rem 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-}
-
-.floating-whatsapp-cta .btn:hover {
-  background-color: #178a42;
-  color: #ffffff;
-}
-
-.floating-whatsapp-cta .btn:active {
-  transform: scale(0.95);
-}

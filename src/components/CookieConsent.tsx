@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/LocalLink";
 import { useSyncExternalStore } from "react";
 import styles from "./CookieConsent.module.css";
 

@@ -1,23 +1,23 @@
 import { MetadataRoute } from 'next'
+import { PAGES, type PageEntry } from '@/lib/pages'
+import { SITE_URL } from '@/lib/seo'
+import { toSwiss } from '@/lib/region'
 
-// Les adresses reprennent exactement celles de l'ancien site (avec la barre finale).
-const pages: { path: string; changeFrequency: 'weekly' | 'monthly' | 'yearly'; priority: number }[] = [
-  { path: '/', changeFrequency: 'weekly', priority: 1 },
-  { path: '/importations/', changeFrequency: 'weekly', priority: 0.9 },
-  { path: '/faire-une-demande/', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/faq/', changeFrequency: 'monthly', priority: 0.7 },
-  { path: '/mentions-legales/', changeFrequency: 'yearly', priority: 0.3 },
-  { path: '/politique-de-confidentialite/', changeFrequency: 'yearly', priority: 0.3 },
-  { path: '/conditions-generales-de-ventes/', changeFrequency: 'yearly', priority: 0.3 },
-]
-
+// Chaque page existe en version France (adresse d'origine) et Suisse (/ch/…-sw/).
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://gtcarsimport.com'
-
-  return pages.map((page) => ({
-    url: `${baseUrl}${page.path}`,
-    lastModified: new Date(),
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
-  }))
+  const entries: PageEntry[] = Object.values(PAGES)
+  return entries
+    .filter((p) => !p.noindex)
+    .flatMap((p) => {
+      const fr = `${SITE_URL}${p.path}`
+      const ch = `${SITE_URL}${toSwiss(p.path)}`
+      const alternates = { languages: { 'fr-FR': fr, 'fr-CH': ch } }
+      return [fr, ch].map((url) => ({
+        url,
+        lastModified: new Date(),
+        changeFrequency: p.changeFrequency,
+        priority: p.priority,
+        alternates,
+      }))
+    })
 }

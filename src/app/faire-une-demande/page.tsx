@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { metaFor } from "@/lib/pages";
 import styles from "./contact.module.css";
 import JotForm from "@/components/JotForm";
 import Icon, { type IconName } from "@/components/Icon";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Faire une demande | GT Cars Import",
-  description: "Faites une demande personnalisée d'importation de véhicule. Notre équipe vous recontacte sous 24h.",
-  path: "/faire-une-demande",
-});
+export const metadata: Metadata = metaFor("demande");
 
 const contacts: { icon: IconName; label: string; value: string; note?: string; href?: string }[] = [
   { icon: "phone", label: "Téléphone", value: "09 70 70 26 75", href: "tel:0970702675" },

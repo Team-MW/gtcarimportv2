@@ -1,18 +1,14 @@
-import Link from "next/link";
+import Link from "@/components/LocalLink";
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { metaFor } from "@/lib/pages";
 import Icon from "@/components/Icon";
 
-export const metadata: Metadata = pageMetadata({
-  title: "FAQ | GT Cars Import",
-  description: "Toutes les réponses à vos questions sur l'importation de véhicules depuis l'Allemagne avec GT Cars Import.",
-  path: "/faq",
-});
+export const metadata: Metadata = metaFor("faq");
 
 const faqs = [
   {
     q: "GT Cars Import est-elle toujours en activité ?",
-    a: "Oui. GT Cars Import est en activité depuis 2020 et traite de nouvelles demandes d'importation chaque semaine. Vous pouvez nous joindre par téléphone au 09 70 70 26 75, par WhatsApp, par e-mail ou via le formulaire de demande : un expert vous recontacte sous 24h.",
+    a: "Oui. GT Cars Import est en activité et traite de nouvelles demandes d'importation chaque semaine. Vous pouvez nous joindre par téléphone au 09 70 70 26 75, par WhatsApp, par e-mail ou via le formulaire de demande : un expert vous recontacte sous 24h.",
   },
   {
     q: "Pourquoi acheter un véhicule en Allemagne ?",

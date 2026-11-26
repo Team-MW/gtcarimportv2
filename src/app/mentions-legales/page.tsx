@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { metaFor } from "@/lib/pages";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Mentions Légales | GT Cars Import",
-  description: "Mentions légales et informations juridiques du site GT Cars Import.",
-  path: "/mentions-legales",
-});
+export const metadata: Metadata = metaFor("mentions");
 
 export default function MentionsLegales() {
   return (

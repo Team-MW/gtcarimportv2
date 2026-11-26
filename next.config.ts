@@ -2,17 +2,14 @@ import type { NextConfig } from "next";
 
 // Anciennes adresses du site WordPress -> nouvelles pages (redirections permanentes).
 const legacyRedirects: [string, string][] = [
-  // Version suisse de l'ancien site
-  ["/ch", "/"],
-  ["/ch/home-sw", "/"],
-  ["/ch/a-propos-2", "/"],
+  // Ancien site suisse : les pages /ch/…-sw existent à nouveau, seules les adresses
+  // qui ont changé de nom sont redirigées.
+  ["/ch", "/ch/home-sw/"],
+  ["/ch/a-propos-2", "/ch/home-sw/"],
+  ["/ch/nos-importations-sw", "/ch/importations-sw/"],
   // Page À propos supprimée
   ["/a-propos", "/"],
-  ["/ch/nos-importations-sw", "/importations/"],
-  ["/ch/faq-sw", "/faq/"],
-  ["/ch/faire-une-demande-sw", "/faire-une-demande/"],
   // Pages sans équivalent
-  ["/page-de-remerciement", "/faire-une-demande/"],
   ["/home", "/"],
   // Adresses courtes utilisées pendant la refonte
   ["/contact", "/faire-une-demande/"],

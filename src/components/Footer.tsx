@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/LocalLink";
 import Image from "next/image";
 import LogoLink from "./LogoLink";
 import { CookieSettingsButton } from "./CookieConsent";
@@ -42,7 +42,7 @@ export default function Footer() {
               <Image src="/logo.webp" alt="GT Cars Import" width={160} height={45} style={{ objectFit: 'contain' }} />
             </LogoLink>
             <p className={styles.brandTagline}>
-              Spécialiste de la recherche et de l'importation de véhicules allemands depuis 2020.
+              Spécialiste de la recherche et de l'importation de véhicules allemands.
             </p>
             <div className={styles.socialRow}>
               <a
@@ -107,10 +107,6 @@ export default function Footer() {
                   </svg>
                   gtcarsimport44@gmail.com
                 </a>
-              </li>
-              <li className={styles.footerHours}>
-                Lundi au vendredi, 10h – 18h<br />
-                Samedi sur rendez-vous
               </li>
             </ul>
           </div>

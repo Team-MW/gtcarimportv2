@@ -1,15 +1,11 @@
-import Link from "next/link";
+import Link from "@/components/LocalLink";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { metaFor } from "@/lib/pages";
 import Icon, { type IconName } from "@/components/Icon";
 import styles from "./importations.module.css";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Nos Importations | GT Cars Import",
-  description: "Découvrez notre processus d'importation de véhicules allemands et nos packs disponibles.",
-  path: "/importations",
-});
+export const metadata: Metadata = metaFor("importations");
 
 const categories: { icon: IconName; name: string; ex: string; desc: string }[] = [
   { icon: "gauge", name: "Sportives", ex: "BMW M, AMG, RS, GTI, Type R…", desc: "Des performances exceptionnelles importées directement depuis le marché allemand." },
@@ -74,7 +70,7 @@ export default function Importations() {
           <div className="red-line" />
           <p className="section-subtitle">
             Nous importons tout type de véhicule directement depuis l'Allemagne, avec un service
-            clé en main et une expertise reconnue depuis 2020.
+            clé en main et une expertise reconnue.
           </p>
         </div>
       </section>

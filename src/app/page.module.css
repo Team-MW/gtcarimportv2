@@ -742,3 +742,33 @@
   .instaInfo { margin-right: 0; }
   .instaBtn { width: 100%; justify-content: center; margin-left: 0; }
 }
+
+/* Carte option (version suisse) */
+.optionLines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0.5rem 0 2rem;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.optionSubtitle {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 2rem 0 1rem;
+}
+
+.optionText {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.optionFiscalite { flex: none; margin-bottom: 0; }
+
+/* Carte option suisse sur fond noir, bordure grise */
+.optionDark { border-color: rgba(255, 255, 255, 0.25); }
