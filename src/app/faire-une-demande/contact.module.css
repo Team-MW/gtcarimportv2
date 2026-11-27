@@ -1,6 +1,17 @@
+/* Sur mobile, le formulaire passe avant les coordonnées : le visiteur arrive
+   directement dessus, sans avoir à faire défiler téléphone, WhatsApp et e-mail. */
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ── COORDONNÉES ────────────────────────────── */
 .contactBar {
   border-bottom: 1px solid var(--border-light);
+}
+
+@media (max-width: 767px) {
+  .contactBar { order: 1; }
 }
 
 .contactGrid {
@@ -72,6 +83,10 @@
 
 @media (min-width: 768px) {
   .formSection { padding: 5.5rem 0 7rem; }
+}
+
+@media (max-width: 767px) {
+  .formSection { padding-top: 2.5rem; }
 }
 
 .formHead {

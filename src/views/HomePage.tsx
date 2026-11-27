@@ -6,10 +6,15 @@ import Counter from "@/components/Counter";
 import Icon, { type IconName } from "@/components/Icon";
 import styles from "@/app/page.module.css";
 
-const avantages: { icon: IconName; label: string }[] = [
+const avantages = (region: Region): { icon: IconName; label: string }[] => [
   { icon: "search", label: "Historique et kilométrages vérifiés" },
   { icon: "clock", label: "Réactivité, disponibilité, efficacité" },
-  { icon: "truck", label: "Livraison par camion en Suisse et dans toute l'Europe" },
+  {
+    icon: "truck",
+    label: region === "ch"
+      ? "Livraison par camion en Suisse et dans toute l'Europe"
+      : "Livraison par camion dans toute l'Europe",
+  },
   { icon: "key", label: "Prestation clé en main" },
   { icon: "lock", label: "Transactions bancaires sécurisées" },
   { icon: "wheel", label: "Essai routier par nos experts allemands avant l'achat" },
@@ -61,12 +66,8 @@ const tarifs = {
       "Livraison sécurisée par camion dans toute l'Europe en moins de 10 jours",
       "Livraison sécurisée par camion à votre domicile / bureau",
     ],
-    fiscalite: [
-      "Prestations facturées en euros TTC (TVA suisse 8,1 %)",
-      "Aucune taxe CO₂ à prévoir pour les véhicules de plus de 12 mois et de plus de 5 000 km",
-      "Véhicule livré clé en main, prêt à immatriculer",
-      "Certificat EUR.1 vérifié systématiquement pour éviter 4 % de droits de douane",
-    ],
+    // Fiscalité et financement suisses : affichés uniquement sur la version suisse.
+    fiscalite: [],
   },
   ch: {
     packName: "Pack Clé en Main en Suisse",
@@ -141,7 +142,9 @@ const reviews = [
   {
     name: "Louis Mercier",
     date: "il y a 1 année",
-    text: "J'ai commandé une Mercedes importée et tout s'est bien passé. Patrick Edwar a été dispo et pro. Voiture livrée propre, bien entretenue…",
+    text: "J'ai commandé une Mercedes importée et tout s'est bien passé. Patrick Edwar a été dispo et pro. Voiture livrée propre, bien entretenue et à un prix plus bas que chez un concessionnaire français.",
+    // Version suisse : extrait sans la mention de la France.
+    textCh: "J'ai commandé une Mercedes importée et tout s'est bien passé. Patrick Edwar a été dispo et pro. Voiture livrée propre, bien entretenue…",
   },
   {
     name: "Dabo Baradji",
@@ -204,7 +207,7 @@ export default function HomePage({ region = "fr" }: { region?: Region }) {
           <div className={`container ${styles.heroStatsInner}`}>
             {[
               { end: 100, suffix: "%", l: "Clé en main" },
-              { end: 137, suffix: "+", l: "Avis Google" },
+              { end: 165, suffix: "+", l: "Avis Google" },
               { end: 7, suffix: "j", l: "Délai moyen de livraison" },
               { end: 25, suffix: "%", l: "D'économies" },
             ].map((s) => (
@@ -236,14 +239,14 @@ export default function HomePage({ region = "fr" }: { region?: Region }) {
               </p>
               <p className={styles.bodyText} style={{ marginBottom: "2.25rem" }}>
                 Notre service premium vous garantit une expérience sans contrainte : <strong>recherche personnalisée</strong>,
-                expertise physique et <strong>livraison clé en main en Suisse</strong>.
+                expertise physique et <strong>livraison clé en main{region === "ch" ? " en Suisse" : " dans toute l'Europe"}</strong>.
               </p>
               <Link href={href("/faire-une-demande/")} className="btn btn-outline-red">
                 Faire une demande
               </Link>
             </div>
             <div className={styles.twoColFeatures}>
-              {avantages.map((a) => (
+              {avantages(region).map((a) => (
                 <div key={a.label} className={styles.avantageCard}>
                   <span className="icon-tile"><Icon name={a.icon} /></span>
                   <p>{a.label}</p>
@@ -270,7 +273,13 @@ export default function HomePage({ region = "fr" }: { region?: Region }) {
             {[
               { num: "01", title: "Recherche", desc: "Nous analysons le marché allemand pour trouver le véhicule exact correspondant à vos critères." },
               { num: "02", title: "Expertise", desc: "Un cabinet indépendant réalise une expertise physique et un essai routier avant tout achat." },
-              { num: "03", title: "Formalités et livraison", desc: "Douane, préparation au MFK et immatriculation suisse sont gérées par nos soins. Livraison à Bâle, ou à domicile en option." },
+              {
+                num: "03",
+                title: "Formalités et livraison",
+                desc: region === "ch"
+                  ? "Douane, préparation au MFK et immatriculation suisse sont gérées par nos soins. Livraison à Bâle, ou à domicile en option."
+                  : "L'immatriculation complète du véhicule est gérée par nos soins. Livraison dans notre dépôt à la frontière, ou à domicile en option.",
+              },
             ].map((step) => (
               <div key={step.num} className={styles.processCard}>
                 <span className={styles.processNum}>{step.num}</span>
@@ -408,25 +417,6 @@ export default function HomePage({ region = "fr" }: { region?: Region }) {
             )}
           </div>
 
-          {region === "fr" && (
-          <div className={styles.pricingNotes}>
-            <div>
-              <h3 className={styles.pricingNotesTitle}>Détails et fiscalité</h3>
-              <ul className={styles.pricingNotesList}>
-                {t.fiscalite.map((f) => (
-                  <li key={f}>{f}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className={styles.pricingNotesTitle}>Financement</h3>
-              <p className={styles.pricingNotesText}>
-                Nous proposons des solutions de leasing ou de crédit adaptées aux résidents suisses.
-                <br />Possibilité de préinscription pour être recontacté dès validation de votre profil.
-              </p>
-            </div>
-          </div>
-          )}
         </div>
       </section>
 
@@ -484,7 +474,7 @@ export default function HomePage({ region = "fr" }: { region?: Region }) {
             <div className={styles.ratingBadge}>
               <Stars />
               <strong>Excellent</strong>
-              <span>137 avis Google</span>
+              <span>165 avis Google</span>
             </div>
           </div>
 
@@ -492,7 +482,7 @@ export default function HomePage({ region = "fr" }: { region?: Region }) {
             {reviews.map((r) => (
               <div key={r.name} className={`card-light ${styles.reviewCard}`}>
                 <Stars />
-                <p className={styles.reviewText}>{r.text}</p>
+                <p className={styles.reviewText}>{(region === "ch" && r.textCh) || r.text}</p>
                 <div className={styles.reviewHeader}>
                   <div className={styles.reviewAvatar}>
                     {r.name.charAt(0).toUpperCase()}

@@ -11,6 +11,8 @@ export const PAGES = {
     path: "/",
     title: "GT Cars Import | Import de véhicules allemands",
     description:
+      "Courtier spécialiste de l'import de véhicules allemands. Recherche personnalisée, expertise physique, immatriculation et livraison clé en main en France et en Europe.",
+    descriptionCh:
       "Courtier spécialiste de l'import de véhicules allemands. Recherche personnalisée, expertise physique, immatriculation et livraison clé en main en Suisse et en Europe.",
     changeFrequency: "weekly",
     priority: 1,
@@ -69,6 +71,8 @@ export interface PageEntry {
   path: string;
   title: string;
   description: string;
+  /** Description propre à la version suisse (sinon la même que la France). */
+  descriptionCh?: string;
   changeFrequency?: "weekly" | "monthly" | "yearly";
   priority?: number;
   /** Page exclue des moteurs de recherche et du sitemap. */
@@ -80,6 +84,7 @@ export type PageKey = keyof typeof PAGES;
 /** Métadonnées d'une page pour la version française ou suisse. */
 export function metaFor(key: PageKey, region: Region = "fr"): Metadata {
   const p: PageEntry = PAGES[key];
-  const meta = pageMetadata({ title: p.title, description: p.description, path: p.path, region });
+  const description = (region === "ch" && p.descriptionCh) || p.description;
+  const meta = pageMetadata({ title: p.title, description, path: p.path, region });
   return p.noindex ? { ...meta, robots: { index: false, follow: true } } : meta;
 }

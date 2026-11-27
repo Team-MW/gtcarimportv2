@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import DemandePage from "@/views/DemandePage";
 import { metaFor } from "@/lib/pages";
 
-// Version suisse : même contenu que /faire-une-demande/, liens internes en -sw.
-export { default } from "../../faire-une-demande/page";
-
 export const metadata: Metadata = metaFor("demande", "ch");
+
+export default function Page() {
+  return <DemandePage region="ch" />;
+}

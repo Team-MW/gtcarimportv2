@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import ImportationsPage from "@/views/ImportationsPage";
 import { metaFor } from "@/lib/pages";
 
-// Version suisse : même contenu que /importations/, liens internes en -sw.
-export { default } from "../../importations/page";
-
 export const metadata: Metadata = metaFor("importations", "ch");
+
+export default function Page() {
+  return <ImportationsPage region="ch" />;
+}

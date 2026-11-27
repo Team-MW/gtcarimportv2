@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import CgvPage from "@/views/CgvPage";
 import { metaFor } from "@/lib/pages";
 
-// Version suisse : même contenu que /conditions-generales-de-ventes/, liens internes en -sw.
-export { default } from "../../conditions-generales-de-ventes/page";
-
 export const metadata: Metadata = metaFor("cgv", "ch");
+
+export default function Page() {
+  return <CgvPage region="ch" />;
+}
